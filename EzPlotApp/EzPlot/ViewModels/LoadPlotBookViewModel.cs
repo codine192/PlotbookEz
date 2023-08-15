@@ -7,12 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
-
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Windows.Input;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace EzPlot.ViewModels
 {
@@ -44,19 +42,15 @@ namespace EzPlot.ViewModels
         {
             if (SelectedPlotBook != null)
             {
-                // Save the selected plot book for later use
-                App.SelectedPlotBook = SelectedPlotBook;
-
-                // Close the window (if applicable)
-                if (parameter is Window window)
-                {
-                    window.Close();
-                }
-                App.Current.MainWindow.Show();
-                // Call a method in your main application to display the image
-                // You can replace "YourMainWindow" with the actual class name of your main window
-
+                using MemoryStream memoryStream = new MemoryStream(SelectedPlotBook.image);
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.StreamSource = memoryStream;
+                image.EndInit();
+                App.defaultImage = image;
             }
+
         }
         public bool CanExecuteLoadPlotBookCommand(object parameter)
         {

@@ -69,7 +69,7 @@ namespace EzPlot {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EzPlot;V1.0.0.0;component/plotbookdetailswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EzPlot;component/plotbookdetailswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PlotBookDetailsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

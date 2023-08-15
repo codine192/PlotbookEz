@@ -11,6 +11,8 @@ using System.Windows;
 
 
 using EzPlot.Models;
+using System.Windows.Media.Imaging;
+
 namespace EzPlot
 {
     /// <summary>
@@ -18,14 +20,32 @@ namespace EzPlot
     /// </summary>
     public partial class App : Application
     {
+        
         public static PlotBook SelectedPlotBook { get; set; }
+        public Image homeImage { get; set; }
+        public static BitmapImage defaultImage { get; set; }
         public IConfiguration Configuration { get; private set; }
         public App()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            using (var context = new MYDBContext())
+                homeImage = context.Images.FirstOrDefault();
 
+            using (MemoryStream memoryStream = new MemoryStream(homeImage.ImageData))
+            {
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.StreamSource = memoryStream;
+                image.EndInit();
+                defaultImage = image;
+
+                // Now you can use 'bitmapImage' as your WPF BitmapImage
+                // ...
+            }
+           
             Configuration = builder.Build();
             
         }

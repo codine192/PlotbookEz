@@ -20,7 +20,7 @@ namespace EzPlot.Models
         [Required] public string name { get; set; }
         [Required] public List<Plot> plotList { get; set; }
         [Required] public byte[] image { get; set; }
-        [Required] public virtual Image Image { get; set; }
+        [NotMapped] public virtual Image Image { get; set; }
         [NotMapped] public virtual Cemetary cemetary { get; set; }
         
         

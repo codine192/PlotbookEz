@@ -48,12 +48,15 @@ namespace EzPlot.ViewModels
             DisplaySelectedPlotBookImage = new RelayCommand(ExecuteDisplaySelectedPlotBookImage, CanExecuteDisplaySelectedPlotBookImage);
             SwitchToViewingModeCommand = new RelayCommand(SwitchToViewingMode);
             SwitchToPlottingModeCommand = new RelayCommand(SwitchToPlottingMode);
-           
+            
         }
 
 
         public void ExecuteOpenNewPlotBook(object obj)
         {
+            // Navigate to Page1.xaml
+            
+
             PlotBookDetailsWindow plotBookDetailsWindow = new();
             plotBookDetailsWindow.ShowDialog();
         }
@@ -163,7 +166,6 @@ namespace EzPlot.ViewModels
                 throw new NotImplementedException();
             }
         }
-
 
 
     }

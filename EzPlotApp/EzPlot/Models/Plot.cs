@@ -14,9 +14,9 @@ namespace EzPlot.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         //public virtual Resident Resident { get; set; }
-        [ForeignKey("Cemetaries")] public int CemetaryID { get; set; }
+         [Required]public int CemetaryID { get; set; }
         //Properties for Plot
-        [ForeignKey("PlotBooks")] public int PlotbookID { get; set; }
+        [Required] public int PlotbookID { get; set; }
                     
         [Required]public double X { get; set; }
         [Required] public double Y { get; set; }

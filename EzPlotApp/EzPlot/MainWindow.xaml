@@ -4,41 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:EzPlot.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainWindowViewModel}"
-        
+        xmlns:gmap="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
         
         mc:Ignorable="d"
-        Title="EzPlot" Height="490" Width="800">
+        Title="EzPlot" Height="500" Width="800">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <BooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
+
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-
-        <!-- Top Toolbar -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="Load Plotbook" Margin="5" Command="{Binding OpenLoadPlotBookCommand}"/>
-
-            <Button Content="New Plotbook" Margin="5" Command="{Binding OpenNewPlotBookCommand}" />
-            <Button Content="View Residents" Margin="5"/>
-            <Button Content="Add Resident" Margin="5" Command="{Binding OpenAddNewResidentCommand}"/>
-            <!-- Add more controls as needed -->
-        </StackPanel>
+    <Border BorderBrush="CornflowerBlue" BorderThickness="2">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
 
-        <!-- Main Image/Plot Display Area -->
-        <Canvas Name="MainCanvas" Grid.Row="1" Background="LightGray">
+            <!-- Top Toolbar -->
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" Width="400" Margin="0,0,0,22">
+                <Button Content="Load Plotbook" Margin="5" Command="{Binding OpenLoadPlotBookCommand}" />
+
+                <Button Content="New Plotbook" Margin="5" Command="{Binding OpenNewPlotBookCommand}" />
+                <Button Content="View Residents" Margin="5"/>
+                <Button Content="Add Resident" Margin="5"  Command="{Binding OpenAddNewResidentCommand}"/>
+
+            </StackPanel>
+            <Frame Name="MainFrame"  Visibility="Visible" Grid.ColumnSpan="2" Height="auto" Width="auto" Margin="0,33,0,0" Grid.RowSpan="2"/>
+            <!---->
+
+            <!-- Main Image/Plot Display Area -->
+            <!--<Canvas Name="MainCanvas" Grid.Row="1" Background="LightGray">
             <Image Stretch="UniformToFill" Height="345"  Width="710" HorizontalAlignment="Left" VerticalAlignment="Top"  Source="{Binding DisplayedImage}" Canvas.Left="45" Canvas.Top="19"/>
             <InkCanvas Name="inkCanvas" Width="710" Height="345" Canvas.Left="50" Canvas.Top="16" Background="Transparent" Visibility="{Binding IsPlottingMode, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            -->
             <!-- You'll programmatically add plot shapes to this canvas -->
-        </Canvas>
+            <!--
+        </Canvas>-->
 
-        <!-- Details Section -->
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,376,0,0" RenderTransformOrigin="0.5,0.5" Height="38" VerticalAlignment="Top">
+            <!-- Details Section -->
+            <!--<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,376,0,0" RenderTransformOrigin="0.5,0.5" Height="38" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -53,11 +63,14 @@
             <Button Content="Show Plotbook" Height="25" Width="150" Command="{Binding DisplaySelectedPlotBookImage, UpdateSourceTrigger=PropertyChanged}" />
             <Button Content="Viewing Mode"  Height="25" Width="120" HorizontalAlignment="Right"  Margin="5" Command="{Binding SwitchToViewingModeCommand}" Visibility="{Binding IsPlottingMode, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             <Button Content="Plotting Mode" Height="25" Width="120" Command="{Binding SwitchToPlottingModeCommand}" Visibility="{Binding IsPlottingMode, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
+            -->
             <!-- Add more controls as needed for displaying/editing plot and resident details -->
-        </StackPanel>
-        
-    </Grid>
-    
+            <!--
+        </StackPanel>-->
+
+        </Grid>
+    </Border>
+
 </Window>
 
 

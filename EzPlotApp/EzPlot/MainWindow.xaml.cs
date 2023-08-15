@@ -23,12 +23,19 @@ namespace EzPlot
     /// </summary>
     public partial class MainWindow : Window
     {
+
         private Point _startPoint;
+
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+            // Navigate to Page1.xaml
+            MainFrame.Source=(new Uri("Page1.xaml", UriKind.Relative));
+
         }
+
+        
         //private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         //{
         //    // Set up the InkCanvas
@@ -74,7 +81,7 @@ namespace EzPlot
 
 
 
-        
+
     }
 
 }

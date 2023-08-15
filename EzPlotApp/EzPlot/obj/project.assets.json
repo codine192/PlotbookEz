@@ -51,23 +51,23 @@
           }
         }
       },
-      "GMap.NET.WinForms/2.1.7": {
+      "GMap.NET.WinPresentation/2.1.7": {
         "type": "package",
         "dependencies": {
           "GMap.NET.Core": "2.1.7"
         },
         "compile": {
-          "lib/net6.0-windows7.0/GMap.NET.WindowsForms.dll": {
+          "lib/net6.0-windows7.0/GMap.NET.WindowsPresentation.dll": {
             "related": ".runtimeconfig.json"
           }
         },
         "runtime": {
-          "lib/net6.0-windows7.0/GMap.NET.WindowsForms.dll": {
+          "lib/net6.0-windows7.0/GMap.NET.WindowsPresentation.dll": {
             "related": ".runtimeconfig.json"
           }
         },
         "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
+          "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
       "Humanizer.Core/2.8.26": {
@@ -1323,30 +1323,30 @@
         "lib/netstandard2.1/GMap.NET.Core.dll"
       ]
     },
-    "GMap.NET.WinForms/2.1.7": {
-      "sha512": "xc3t2It++kueFr6p/A8OanQ7EWSCz4udrVMew1+6El7ObKqgjhHR4j0w6gNWMehbajp8ZoR4ADZbDajytnpu3Q==",
+    "GMap.NET.WinPresentation/2.1.7": {
+      "sha512": "5ccsJYVAw5s+aT2d6m4Pg9coUiy4MJaVrZrReCzZOB/N3ZpQEDHNJcJZuc4/EvLxGECHdjQSyvYR75B94Q0jqQ==",
       "type": "package",
-      "path": "gmap.net.winforms/2.1.7",
+      "path": "gmap.net.winpresentation/2.1.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "gmap.net.winforms.2.1.7.nupkg.sha512",
-        "gmap.net.winforms.nuspec",
-        "lib/net46/GMap.NET.WindowsForms.dll",
-        "lib/net461/GMap.NET.WindowsForms.dll",
-        "lib/net462/GMap.NET.WindowsForms.dll",
-        "lib/net47/GMap.NET.WindowsForms.dll",
-        "lib/net471/GMap.NET.WindowsForms.dll",
-        "lib/net472/GMap.NET.WindowsForms.dll",
-        "lib/net48/GMap.NET.WindowsForms.dll",
-        "lib/net5.0-windows7.0/GMap.NET.WindowsForms.dll",
-        "lib/net5.0-windows7.0/GMap.NET.WindowsForms.runtimeconfig.json",
-        "lib/net6.0-windows7.0/GMap.NET.WindowsForms.dll",
-        "lib/net6.0-windows7.0/GMap.NET.WindowsForms.runtimeconfig.json",
-        "lib/netcoreapp3.0/GMap.NET.WindowsForms.dll",
-        "lib/netcoreapp3.0/GMap.NET.WindowsForms.runtimeconfig.json",
-        "lib/netcoreapp3.1/GMap.NET.WindowsForms.dll",
-        "lib/netcoreapp3.1/GMap.NET.WindowsForms.runtimeconfig.json"
+        "gmap.net.winpresentation.2.1.7.nupkg.sha512",
+        "gmap.net.winpresentation.nuspec",
+        "lib/net46/GMap.NET.WindowsPresentation.dll",
+        "lib/net461/GMap.NET.WindowsPresentation.dll",
+        "lib/net462/GMap.NET.WindowsPresentation.dll",
+        "lib/net47/GMap.NET.WindowsPresentation.dll",
+        "lib/net471/GMap.NET.WindowsPresentation.dll",
+        "lib/net472/GMap.NET.WindowsPresentation.dll",
+        "lib/net48/GMap.NET.WindowsPresentation.dll",
+        "lib/net5.0-windows7.0/GMap.NET.WindowsPresentation.dll",
+        "lib/net5.0-windows7.0/GMap.NET.WindowsPresentation.runtimeconfig.json",
+        "lib/net6.0-windows7.0/GMap.NET.WindowsPresentation.dll",
+        "lib/net6.0-windows7.0/GMap.NET.WindowsPresentation.runtimeconfig.json",
+        "lib/netcoreapp3.0/GMap.NET.WindowsPresentation.dll",
+        "lib/netcoreapp3.0/GMap.NET.WindowsPresentation.runtimeconfig.json",
+        "lib/netcoreapp3.1/GMap.NET.WindowsPresentation.dll",
+        "lib/netcoreapp3.1/GMap.NET.WindowsPresentation.runtimeconfig.json"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -3261,7 +3261,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "GMap.NET.WinForms >= 2.1.7",
+      "GMap.NET.WinPresentation >= 2.1.7",
       "Microsoft.EntityFrameworkCore >= 6.0.21",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.21",
@@ -3315,7 +3315,7 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
-          "GMap.NET.WinForms": {
+          "GMap.NET.WinPresentation": {
             "target": "Package",
             "version": "[2.1.7, )"
           },

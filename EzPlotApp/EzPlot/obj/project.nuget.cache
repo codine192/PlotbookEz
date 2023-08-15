@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Xcs/RmoFPJSb7quI67u+rkiaduBDAEZOdHQui+3R5qBFNz6vm48V5Uz9x+O1d++VKrCkYfDX0SCOHXg8d1OdmQ==",
+  "dgSpecHash": "sERn2cFZUAmG9LkX0RuvV5UTPhfXhSih5LIeZvvwfInt3t/sBFEL6ccvsjQPChlYXGqCrOmCYoc59YVvYsw5Uw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Cody\\Documents\\GitHub\\PlotbookEz\\EzPlotApp\\EzPlot\\EzPlot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cody\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Cody\\.nuget\\packages\\gmap.net.core\\2.1.7\\gmap.net.core.2.1.7.nupkg.sha512",
-    "C:\\Users\\Cody\\.nuget\\packages\\gmap.net.winforms\\2.1.7\\gmap.net.winforms.2.1.7.nupkg.sha512",
+    "C:\\Users\\Cody\\.nuget\\packages\\gmap.net.winpresentation\\2.1.7\\gmap.net.winpresentation.2.1.7.nupkg.sha512",
     "C:\\Users\\Cody\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Cody\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Cody\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

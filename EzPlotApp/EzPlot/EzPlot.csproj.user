@@ -10,7 +10,13 @@
     <Compile Update="AddResidentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CemeteryMarkerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="LoadPlotBookWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PlotBookDetailsWindow.xaml.cs">
@@ -21,10 +27,16 @@
     <Page Update="AddResidentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="CemeteryMarkerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoadPlotBookWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page1.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PlotBookDetailsWindow.xaml">
