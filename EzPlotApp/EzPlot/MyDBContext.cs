@@ -15,7 +15,7 @@ namespace EzPlot
         public DbSet<Plot> Plots { get; set; }
         public DbSet<PlotBook> PlotBooks { get; set; }
         public DbSet<Resident> Residents { get; set; }
-        public DbSet<Cemetary> Cemetaries { get; set; }
+        public DbSet<Cemetery> Cemetaries { get; set; }
         public DbSet<Image> Images { get; set; }
         // ... other DbSets for your models ...
 

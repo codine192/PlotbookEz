@@ -43,7 +43,7 @@ namespace EzPlot.Migrations
                 {
                     plotBookID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    cemetaryID = table.Column<int>(type: "int", nullable: false),
+                    CemeteryID = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     image = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
                 },
@@ -76,7 +76,7 @@ namespace EzPlot.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CemetaryID = table.Column<int>(type: "int", nullable: false),
+                    CemeteryID = table.Column<int>(type: "int", nullable: false),
                     PlotbookID = table.Column<int>(type: "int", nullable: false),
                     X = table.Column<double>(type: "float", nullable: false),
                     Y = table.Column<double>(type: "float", nullable: false),

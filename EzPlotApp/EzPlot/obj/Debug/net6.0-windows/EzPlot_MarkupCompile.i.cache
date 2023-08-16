@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\App.xaml
-6288699975
+61013782671
 
-28-796511247
+28-183462126
 232-624876024
-AddResidentWindow.xaml;CemeteryMarkerControl.xaml;LoadPlotBookWindow.xaml;MainWindow.xaml;Page1.xaml;PlotBookDetailsWindow.xaml;
+AddResidentWindow.xaml;LoadPlotBookWindow.xaml;MainWindow.xaml;MarkerControl.xaml;Page1.xaml;PlotBookDetailsWindow.xaml;
 
-False
+True
 

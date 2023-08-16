@@ -14,7 +14,7 @@ namespace EzPlot.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         //public virtual Resident Resident { get; set; }
-         [Required]public int CemetaryID { get; set; }
+         [Required]public int CemeteryID { get; set; }
         //Properties for Plot
         [Required] public int PlotbookID { get; set; }
                     

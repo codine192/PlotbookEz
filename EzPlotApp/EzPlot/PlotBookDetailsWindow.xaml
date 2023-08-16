@@ -24,7 +24,7 @@
         <!-- Fields for PlotBook details. For example: -->
         <TextBox Name="plotBookName" Grid.Row="1" Margin="5" Text="{Binding Name}"/>
         
-        <TextBox Name="plotBookCemetaryID" Grid.Row="2" Margin="5" Text="{Binding CemetaryID}"/>
+        <TextBox Name="plotBookCemeteryID" Grid.Row="2" Margin="5" Text="{Binding CemeteryID}"/>
         <!-- Add other fields as needed... -->
 
         <!-- Save Button -->

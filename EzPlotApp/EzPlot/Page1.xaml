@@ -21,19 +21,7 @@
             </Grid.ColumnDefinitions>
             <!-- Image Display Area -->
             <Canvas Name="OverlayCanvas" Grid.ColumnSpan="4">
-                <ItemsControl ItemsSource="{Binding Markers}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <models:CemetaryMarker
-                            X="{Binding X}"
-                            Y="{Binding Y}"
-                            MarkerLabel="{Binding MarkerLabel}"
-                            PlotID="{Binding PlotID}"
-                            Type="{Binding Type}"/>
-                            
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                
                 <Image Name="mapImage" Stretch="UniformToFill" Grid.ColumnSpan="4" />
 
                 <!-- Toolbox -->

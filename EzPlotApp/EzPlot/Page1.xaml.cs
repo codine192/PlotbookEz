@@ -29,8 +29,8 @@ namespace EzPlot
         
         public EzPlot.Models.Image homeImage { get; set; }
         public BitmapImage image { get; set; }
-        public ObservableCollection<CemetaryMarker> Markers { get; set; }
-        public CemetaryMarker CemetaryMarker { get; set; }
+        public ObservableCollection<Marker> Markers { get; set; }
+        public Marker CemeteryMarker { get; set; }
         
         public Page1()
 
@@ -38,22 +38,22 @@ namespace EzPlot
 
             InitializeComponent();
             DataContext = this;
+            
            
             mapImage.Source = App.defaultImage;
-            CemetaryMarker marker = new CemetaryMarker()
+            Marker marker = new()
             {
-                Visibility=Visibility.Visible,
+                
                 X= 20,
                 Y = 20,
-                MarkerLabel = "Cody",
+                Label = "Cody",
                 PlotID = 1,
                 Type = "Grave"
 
 
             };
-            OverlayCanvas.Children.Add(marker);
-            Canvas.SetLeft(marker, 100);
-            Canvas.SetRight(marker, 100);
+           
+           
         }
         
        

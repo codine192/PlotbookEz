@@ -24,7 +24,7 @@ namespace EzPlot.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("EzPlot.Models.Cemetary", b =>
+            modelBuilder.Entity("EzPlot.Models.Cemetery", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace EzPlot.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("CemetaryID")
+                    b.Property<int>("CemeteryID")
                         .HasColumnType("int");
 
                     b.Property<double>("Height")
@@ -106,7 +106,7 @@ namespace EzPlot.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("plotBookID"), 1L, 1);
 
-                    b.Property<int>("cemetaryID")
+                    b.Property<int>("CemeteryID")
                         .HasColumnType("int");
 
                     b.Property<byte[]>("image")

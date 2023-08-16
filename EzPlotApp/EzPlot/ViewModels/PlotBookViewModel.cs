@@ -40,15 +40,15 @@ namespace EzPlot.ViewModels
                 }
             }
         }
-        public int CemetaryID
+        public int CemeteryID
         {
-            get { return _plotBook.cemetaryID; }
+            get { return _plotBook.CemeteryID; }
             set
             {
-                if (_plotBook.cemetaryID != value)
+                if (_plotBook.CemeteryID != value)
                 {
-                    _plotBook.cemetaryID = value;
-                    OnPropertyChanged(nameof(CemetaryID));
+                    _plotBook.CemeteryID = value;
+                    OnPropertyChanged(nameof(CemeteryID));
                 }
             }
         }

@@ -16,12 +16,12 @@ namespace EzPlot.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required] public int plotBookID { get; set; }
-        [Required] public int cemetaryID { get; set; }
+        [Required] public int CemeteryID { get; set; }
         [Required] public string name { get; set; }
         [Required] public List<Plot> plotList { get; set; }
         [Required] public byte[] image { get; set; }
         [NotMapped] public virtual Image Image { get; set; }
-        [NotMapped] public virtual Cemetary cemetary { get; set; }
+        [NotMapped] public virtual Cemetery Cemetery { get; set; }
         
         
     }
