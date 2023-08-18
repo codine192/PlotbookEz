@@ -17,14 +17,18 @@ namespace EzPlot
         public DbSet<Resident> Residents { get; set; }
         public DbSet<Cemetery> Cemetaries { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<Marker> Markers { get; set; }
         // ... other DbSets for your models ...
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=jabba;User Id=plotez;Password=plotez!;Database=plotez;");
         }
+     }
 
-    }
+
+
+    
 
 }
 

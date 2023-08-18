@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using EzPlot.Views;
 
 namespace EzPlot.ViewModels
 {
@@ -93,7 +94,7 @@ namespace EzPlot.ViewModels
 
                 
                 byte[] imageData = db.PlotBooks
-                    .Where(p => p.plotBookID == App.SelectedPlotBook.plotBookID)
+                    .Where(p => p.ID == App.SelectedPlotBook.ID)
                     .Select(p => p.image)
                     .FirstOrDefault();
 

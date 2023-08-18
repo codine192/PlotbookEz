@@ -32,11 +32,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <Resource Include="Assests\Images\marker.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="marker.png" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

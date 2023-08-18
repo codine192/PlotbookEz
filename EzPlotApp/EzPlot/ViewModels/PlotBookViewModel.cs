@@ -55,12 +55,12 @@ namespace EzPlot.ViewModels
 
         public List<Plot> Plots
         {
-            get { return _plotBook.plotList; }
+            get { return (List<Plot>)_plotBook.Plots; }
             set
             {
-                if (_plotBook.plotList != value)
+                if (_plotBook.Plots != value)
                 {
-                    _plotBook.plotList = value;
+                    _plotBook.Plots = value;
                     OnPropertyChanged(nameof(Plots));
                 }
             }

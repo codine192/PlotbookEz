@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\App.xaml
-61013782671
+8-1592812086
 
-28-183462126
+281410799608
 232-624876024
-AddResidentWindow.xaml;LoadPlotBookWindow.xaml;MainWindow.xaml;MarkerControl.xaml;Page1.xaml;PlotBookDetailsWindow.xaml;
+Controls\MarkerControl.xaml;Controls\MarkerToolBoxControl.xaml;MainWindow.xaml;Views\AddResidentWindow.xaml;Views\LoadPlotBookWindow.xaml;Views\MainPage.xaml;Views\MarkerToolBoxView.xaml;Views\PlotBookDetailsWindow.xaml;
 
-True
+False
 

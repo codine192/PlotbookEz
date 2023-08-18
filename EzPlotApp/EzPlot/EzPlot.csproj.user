@@ -7,39 +7,51 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AddResidentWindow.xaml.cs">
+    <Compile Update="Controls\MarkerToolBoxControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="LoadPlotBookWindow.xaml.cs">
+    <Compile Update="Views\AddResidentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MarkerControl.xaml.cs">
+    <Compile Update="Views\LoadPlotBookWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Page1.xaml.cs">
+    <Compile Update="Controls\MarkerControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PlotBookDetailsWindow.xaml.cs">
+    <Compile Update="Views\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MarkerToolBoxView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PlotBookDetailsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AddResidentWindow.xaml">
+    <Page Update="Controls\MarkerToolBoxControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="LoadPlotBookWindow.xaml">
+    <Page Update="Views\AddResidentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoadPlotBookWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MarkerControl.xaml">
+    <Page Update="Controls\MarkerControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Page1.xaml">
+    <Page Update="Views\MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PlotBookDetailsWindow.xaml">
+    <Page Update="Views\MarkerToolBoxView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PlotBookDetailsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

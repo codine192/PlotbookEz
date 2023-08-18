@@ -13,12 +13,13 @@ namespace EzPlot.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        [Required] public string FirstName { get; set; }
-        [Required] public string LastName { get; set; }
-        [Required] public DateTime BirthDate { get; set; }
-        [Required] public DateTime DeathDate { get; set; }
-        [Required] public DateTime DateAdded { get; set; }
-        //public virtual Plot Plot { get; set; }
-        [Required] public int PlotID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime DeathDate { get; set; }
+        public DateTime DateAdded { get; set; }
+        public int PlotID { get; set; } 
+        public virtual Plot Plot { get; set; }
+        
     }
 }

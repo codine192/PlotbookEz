@@ -4,19 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace EzPlot.Models
 {
     using System.ComponentModel;
 
     public class Marker : INotifyPropertyChanged
     {
+        private int _markerID;
         private int _plotID;
         private double _x;
         private double _y;
         private string _label;
         private string _type;
 
+        public virtual Plot Plot { get; set; }
+        
         public int PlotID
         {
             get => _plotID;
@@ -27,6 +31,7 @@ namespace EzPlot.Models
             }
         }
 
+        
         public double X
         {
             get => _x;
@@ -37,6 +42,7 @@ namespace EzPlot.Models
             }
         }
 
+        
         public double Y
         {
             get => _y;
@@ -47,6 +53,7 @@ namespace EzPlot.Models
             }
         }
 
+        
         public string Label
         {
             get => _label;
@@ -57,6 +64,7 @@ namespace EzPlot.Models
             }
         }
 
+       
         public string Type
         {
             get => _type;
@@ -67,12 +75,27 @@ namespace EzPlot.Models
             }
         }
 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID
+        {
+            get => _markerID;
+            set
+            {
+                _markerID = value;
+                OnPropertyChanged(nameof(ID));
+            }
+        }
+        
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        
+        
     }
 
 }

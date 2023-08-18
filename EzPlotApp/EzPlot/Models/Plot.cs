@@ -13,14 +13,14 @@ namespace EzPlot.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        //public virtual Resident Resident { get; set; }
-         [Required]public int CemeteryID { get; set; }
-        //Properties for Plot
-        [Required] public int PlotbookID { get; set; }
-                    
-        [Required]public double X { get; set; }
-        [Required] public double Y { get; set; }
-        [Required] public double Width { get; set; }
-        [Required] public double Height { get; set; }
+        public int ResidentID { get; set; }
+        public int MarkerID { get; set; }
+        public int PlotbookID { get; set; }
+        public virtual PlotBook PlotBook { get; set; }
+        public virtual Marker Marker { get; set; }
+        public virtual Resident Resident { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
     }
 }
+

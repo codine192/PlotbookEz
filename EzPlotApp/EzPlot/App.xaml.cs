@@ -30,21 +30,24 @@ namespace EzPlot
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            using (var context = new MYDBContext())
-                homeImage = context.Images.FirstOrDefault();
+            //using (var context = new MYDBContext())
+            //{
+            //    homeImage = context.Images.FirstOrDefault();
+            //    SelectedPlotBook = context.PlotBooks.FirstOrDefault();
+            //}
 
-            using (MemoryStream memoryStream = new MemoryStream(homeImage.ImageData))
-            {
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.StreamSource = memoryStream;
-                image.EndInit();
-                defaultImage = image;
+            //using (MemoryStream memoryStream = new MemoryStream(homeImage.ImageData))
+            //{
+            //    BitmapImage image = new BitmapImage();
+            //    image.BeginInit();
+            //    image.CacheOption = BitmapCacheOption.OnLoad;
+            //    image.StreamSource = memoryStream;
+            //    image.EndInit();
+            //    defaultImage = image;
 
-                // Now you can use 'bitmapImage' as your WPF BitmapImage
-                // ...
-            }
+            //    // Now you can use 'bitmapImage' as your WPF BitmapImage
+            //    // ...
+            //}
            
             Configuration = builder.Build();
             

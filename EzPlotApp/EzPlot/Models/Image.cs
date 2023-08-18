@@ -14,8 +14,8 @@ namespace EzPlot.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ImageID { get; set; }
-        [Required] public int PlotBookID { get; set; }
+        public int ID { get; set; }
+        
         [Required] public byte[] ImageData { get; set; }
         [Required] public string Filename { get; set; }
         

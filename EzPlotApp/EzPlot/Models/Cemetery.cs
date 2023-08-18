@@ -15,5 +15,6 @@ namespace EzPlot.Models
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
+        public ICollection<PlotBook> PlotBooks { get; set; }
     }
 }
