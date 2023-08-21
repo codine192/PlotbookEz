@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Image.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="marker.png" />
   </ItemGroup>
 
@@ -37,6 +41,10 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Models\Image.cs" />
   </ItemGroup>
 
 </Project>

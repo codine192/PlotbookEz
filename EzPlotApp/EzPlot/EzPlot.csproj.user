@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\MarkerPopupControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\MarkerToolBoxControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -30,6 +33,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\MarkerPopupControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\MarkerToolBoxControl.xaml">
       <SubType>Designer</SubType>
     </Page>

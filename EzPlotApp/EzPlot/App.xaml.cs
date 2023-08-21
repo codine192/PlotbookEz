@@ -22,7 +22,7 @@ namespace EzPlot
     {
         
         public static PlotBook SelectedPlotBook { get; set; }
-        public Image homeImage { get; set; }
+        
         public static BitmapImage defaultImage { get; set; }
         public IConfiguration Configuration { get; private set; }
         public App()
@@ -30,11 +30,24 @@ namespace EzPlot
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            //using (var context = new MYDBContext())
-            //{
-            //    homeImage = context.Images.FirstOrDefault();
-            //    SelectedPlotBook = context.PlotBooks.FirstOrDefault();
-            //}
+
+            using (var context = new MYDBContext())
+            {
+                
+                SelectedPlotBook = context.PlotBooks.FirstOrDefault();
+                if (SelectedPlotBook != null)
+                {
+                    using (MemoryStream memoryStream = new MemoryStream(SelectedPlotBook.image))
+                    {
+                        BitmapImage image = new BitmapImage();
+                        image.BeginInit();
+                        image.CacheOption = BitmapCacheOption.OnLoad;
+                        image.StreamSource = memoryStream;
+                        image.EndInit();
+                        defaultImage = image;
+                    }
+                }
+            }
 
             //using (MemoryStream memoryStream = new MemoryStream(homeImage.ImageData))
             //{
@@ -48,7 +61,7 @@ namespace EzPlot
             //    // Now you can use 'bitmapImage' as your WPF BitmapImage
             //    // ...
             //}
-           
+
             Configuration = builder.Build();
             
         }

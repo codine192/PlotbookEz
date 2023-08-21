@@ -21,7 +21,7 @@ namespace EzPlot.Models
         public string name { get; set; }
         public ICollection<Plot> Plots { get; set; }
         public byte[] image { get; set; }
-        public virtual Image Image { get; set; }
+        
         
         
         

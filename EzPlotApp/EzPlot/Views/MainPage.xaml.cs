@@ -34,7 +34,7 @@ namespace EzPlot.Views
         public ObservableCollection<Resident> UnassignedResidents { get; set; }
         public ObservableCollection<Resident> Residents { get; set; }
         public ObservableCollection<Cemetery> Cemetaries { get; set; } 
-        public EzPlot.Models.Image homeImage { get; set; }
+        
         public BitmapImage image { get; set; }
         public ObservableCollection<Marker> Markers { get; set; }
         public Marker CemeteryMarker { get; set; }
@@ -54,7 +54,7 @@ namespace EzPlot.Views
             markerToolBoxControl.RemoveMarkerModeActivated += ToolBox_RemoveMarkerModeDeactivated;
             using var db = new MYDBContext();
             UnassignedResidents = new ObservableCollection<Resident>(db.Residents.Where(r => r.PlotID == null));
-            Cemetaries = new ObservableCollection<Cemetery>(db.Cemetaries);
+            Cemetaries = new ObservableCollection<Cemetery>(db.Cemeteries);
             
             
 

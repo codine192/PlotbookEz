@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using EzPlot.Models;
 using Microsoft.Win32;
-
+using System.Windows.Media.Imaging;
+using System.Windows.Controls;
 
 namespace EzPlot.ViewModels
 {
@@ -90,16 +91,11 @@ namespace EzPlot.ViewModels
         {
             using (var db = new MYDBContext())
             {
-                // Save image to Images table
-                Image newImage = new Image
-                {
-                    ImageData = _imageData,
-                    Filename = Path.GetFileName(AerialImagePath)
-                };
-                db.Images.Add(newImage);
-                db.SaveChanges();
+                  
+                
+                
                 // Save plot book to PlotBooks table
-                _plotBook.image = newImage.ImageData;
+                _plotBook.image = _imageData;
                 db.PlotBooks.Add(_plotBook);
                 int savedChanged = db.SaveChanges();
                 if (savedChanged > 0)
@@ -131,6 +127,7 @@ namespace EzPlot.ViewModels
                 {
                     _imageData = new byte[fs.Length];
                     fs.Read(_imageData, 0, (int)fs.Length);
+                    fs.Close();
                 }
             }
         }
@@ -159,31 +156,6 @@ namespace EzPlot.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        //public void SavePlotBookWithImageAndPlots()
-        //{
-        //    using (var db = new MYDBContext())
-        //    {
-        //        // Save image to Images table
-        //        Image newImage = new Image
-        //        {
-        //            ImageData = _imageData,
-        //            Filename = Path.GetFileName(AerialImagePath)
-        //        };
-        //        db.Images.Add(newImage);
-
-        //        // Save plot book to PlotBooks table
-        //        _plotBook.image = newImage.ImageData; // Set the image reference
-        //        db.PlotBooks.Add(_plotBook);
-
-        //        //// Save plots to Plots table
-        //        //foreach (var plot in _plotBook.Plots)
-        //        //{
-        //        //    plot.Image = newImage; // Set the image reference
-        //        //    db.Plots.Add(plot);
-        //        //}
-
-        //        db.SaveChanges();
-        //    }
-        //}
+        
     }
 }
