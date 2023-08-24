@@ -6,16 +6,31 @@
              xmlns:local="clr-namespace:EzPlot.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="200">
-    <Grid Height="25" Margin="50,12,32,12">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="2" 
+                            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+        
+    <Grid Height="25" Width="100">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="50"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="0" Content="Add" Click="PlaceMarker_Click" Grid.ColumnSpan="2" Margin="15,0,19,0"/>
-        <Button Grid.Column="1" Content="Remove" Click="RemoveMarker_Click" Margin="0,0,-21,0" Grid.ColumnSpan="3"/>
+        <Button Grid.Column="0" Content="Add" Click="PlaceMarker_Click" Width="50" Background="CornflowerBlue" />
+        <Button Grid.Column="1" Content="Remove" Click="RemoveMarker_Click" Width="50" Background="CornflowerBlue" />
 
 
 

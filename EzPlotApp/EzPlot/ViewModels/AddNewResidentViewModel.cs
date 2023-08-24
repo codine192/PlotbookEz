@@ -57,7 +57,7 @@ namespace EzPlot.ViewModels
             newResident.BirthDate = BirthDate;
             newResident.DeathDate = DeathDate;
             newResident.DateAdded = DateTime.Now;
-            newResident.PlotID = PlotID;
+            
             db.Residents.Add(newResident);
             int savedChanged = db.SaveChanges();
             if (savedChanged > 0)

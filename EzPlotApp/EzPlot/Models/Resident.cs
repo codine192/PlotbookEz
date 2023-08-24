@@ -18,8 +18,8 @@ namespace EzPlot.Models
         public DateTime BirthDate { get; set; }
         public DateTime DeathDate { get; set; }
         public DateTime DateAdded { get; set; }
-        public int PlotID { get; set; } 
-        public virtual Plot Plot { get; set; }
-        
+        public bool AssignedToPlot { get; set; }
+
+
     }
 }

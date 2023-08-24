@@ -63,9 +63,6 @@ namespace EzPlot.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PlotID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -89,10 +86,7 @@ namespace EzPlot.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("MarkerID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PlotbookID")
+                    b.Property<int?>("PlotBookID")
                         .HasColumnType("int");
 
                     b.Property<int>("ResidentID")
@@ -106,10 +100,9 @@ namespace EzPlot.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("MarkerID")
-                        .IsUnique();
+                    b.HasIndex("PlotBookID");
 
-                    b.HasIndex("PlotbookID");
+                    b.HasIndex("ResidentID");
 
                     b.ToTable("Plots");
                 });
@@ -148,6 +141,9 @@ namespace EzPlot.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<bool>("AssignedToPlot")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
@@ -165,34 +161,24 @@ namespace EzPlot.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PlotID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("PlotID")
-                        .IsUnique();
 
                     b.ToTable("Residents");
                 });
 
             modelBuilder.Entity("EzPlot.Models.Plot", b =>
                 {
-                    b.HasOne("EzPlot.Models.Marker", "Marker")
-                        .WithOne("Plot")
-                        .HasForeignKey("EzPlot.Models.Plot", "MarkerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EzPlot.Models.PlotBook", "PlotBook")
+                    b.HasOne("EzPlot.Models.PlotBook", null)
                         .WithMany("Plots")
-                        .HasForeignKey("PlotbookID")
+                        .HasForeignKey("PlotBookID");
+
+                    b.HasOne("EzPlot.Models.Resident", "Resident")
+                        .WithMany()
+                        .HasForeignKey("ResidentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Marker");
-
-                    b.Navigation("PlotBook");
+                    b.Navigation("Resident");
                 });
 
             modelBuilder.Entity("EzPlot.Models.PlotBook", b =>
@@ -206,32 +192,9 @@ namespace EzPlot.Migrations
                     b.Navigation("Cemetery");
                 });
 
-            modelBuilder.Entity("EzPlot.Models.Resident", b =>
-                {
-                    b.HasOne("EzPlot.Models.Plot", "Plot")
-                        .WithOne("Resident")
-                        .HasForeignKey("EzPlot.Models.Resident", "PlotID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Plot");
-                });
-
             modelBuilder.Entity("EzPlot.Models.Cemetery", b =>
                 {
                     b.Navigation("PlotBooks");
-                });
-
-            modelBuilder.Entity("EzPlot.Models.Marker", b =>
-                {
-                    b.Navigation("Plot")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("EzPlot.Models.Plot", b =>
-                {
-                    b.Navigation("Resident")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("EzPlot.Models.PlotBook", b =>

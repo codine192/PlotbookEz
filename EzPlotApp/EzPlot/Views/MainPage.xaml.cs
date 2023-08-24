@@ -31,7 +31,9 @@ namespace EzPlot.Views
         private bool isAddingMarker = false;
         private bool awaitingClick = false;
         public event EventHandler LeftButton_Pressed;
+        public event EventHandler MarkerAdded;
         public ObservableCollection<Resident> UnassignedResidents { get; set; }
+        public ObservableCollection<Plot> UnassignedPlots { get; set; }
         public ObservableCollection<Resident> Residents { get; set; }
         public ObservableCollection<Cemetery> Cemetaries { get; set; } 
         
@@ -52,8 +54,10 @@ namespace EzPlot.Views
             else { mapImage.Source = ConvertByteArrayToBitmapImage(selectedPlotBook.image); }
             markerToolBoxControl.PlaceMarkerModeActivated += ToolBox_PlacingMarkerModeActivated;
             markerToolBoxControl.RemoveMarkerModeActivated += ToolBox_RemoveMarkerModeDeactivated;
+            MarkerAdded += OpenMarkerPopup;
             using var db = new MYDBContext();
-            UnassignedResidents = new ObservableCollection<Resident>(db.Residents.Where(r => r.PlotID == null));
+            UnassignedResidents = new ObservableCollection<Resident>(db.Residents.Where(r => r.AssignedToPlot == false));
+            UnassignedPlots = new ObservableCollection<Plot>(db.Plots.Where(p => p.ResidentID == null));
             Cemetaries = new ObservableCollection<Cemetery>(db.Cemeteries);
             
             
@@ -81,7 +85,7 @@ namespace EzPlot.Views
             {
                 
                 
-                markerPopup.Visibility = Visibility.Visible;
+                
                 Point pos = e.GetPosition(OverlayCanvas);
                 Marker marker = new Marker()
                 {
@@ -95,9 +99,9 @@ namespace EzPlot.Views
                 Canvas.SetTop(markerRepresenter, pos.Y);
                 OverlayCanvas.Children.Add(markerRepresenter);
                 // Set the popup's position and show it
-                markerPopup.HorizontalOffset = pos.X;
-                markerPopup.VerticalOffset = pos.Y;
-                markerPopup.IsOpen = true;
+              MarkerAdded?.Invoke(this, new EventArgs());
+                
+               
 
             }
             else if (isRemovingMarker)
@@ -107,6 +111,25 @@ namespace EzPlot.Views
                 {
                     Markers.Remove(marker);
                 }
+            }
+        }
+        public void OpenMarkerPopup(object sender, EventArgs e)
+        {
+           if (isPlacingMarker)
+            {
+                OverlayCanvas.Cursor = Cursors.Arrow;
+                MarkerPopupControl markerPopupControl = new MarkerPopupControl();
+                { markerPopupControl.ResidentListData = UnassignedResidents; markerPopupControl.PlotListData = UnassignedPlots; }
+
+                        
+
+                isPlacingMarker = false;
+                Canvas.SetLeft(markerPopupControl, 100);
+                Canvas.SetTop(markerPopupControl, 100);
+                OverlayCanvas.Children.Add(markerPopupControl);
+                
+                markerPopupControl.Visibility = Visibility.Visible;
+                awaitingClick = false;
             }
         }
 

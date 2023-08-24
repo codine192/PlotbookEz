@@ -25,18 +25,12 @@ namespace EzPlot
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Plot>()
-                .HasOne(p => p.Marker)
-                .WithOne(i => i.Plot)
-                .HasForeignKey<Plot>(b => b.MarkerID);
-            modelBuilder.Entity<Resident>()
-                .HasOne(p => p.Plot)
-                .WithOne(i => i.Resident)
-                .HasForeignKey<Resident>(b => b.PlotID);
+            
             modelBuilder.Entity<Cemetery>().HasData(
                 new Cemetery { ID = 1, Name = "Miskellys Place" },
                      new Cemetery { ID = 2, Name = "Cemetery B"}
                     );
+            
 
         }
     }

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using EzPlot.Views;
 
+
 namespace EzPlot.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
@@ -68,8 +69,8 @@ namespace EzPlot.ViewModels
         }
         public void ExecuteOpenAddNewResident(object obj)
         {
-            AddResidentWindow addResidentWindow = new AddResidentWindow();
-            addResidentWindow.ShowDialog();
+            AddResidentPageView pageView = new AddResidentPageView();
+          
         }
         public bool CanExecuteOpenAddNewResident(object obj)
         {

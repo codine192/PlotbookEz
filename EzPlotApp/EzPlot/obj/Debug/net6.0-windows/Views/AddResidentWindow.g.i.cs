@@ -62,7 +62,7 @@ namespace EzPlot.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EzPlot;V1.0.0.0;component/views/addresidentwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EzPlot;component/views/addresidentwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddResidentWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

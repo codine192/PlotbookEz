@@ -13,6 +13,21 @@
     <Compile Update="Controls\MarkerToolBoxControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AddPlotBookPageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewPlotListPageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ViewResidentListPageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Update="Views\AddPlotPageView.xaml.cs">
+      <SubType>Code</SubType>
+    </None>
+    <Compile Update="Views\AddResidentPageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddResidentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,12 +46,24 @@
     <Compile Update="Views\PlotBookDetailsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ViewResidentPageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\MarkerPopupControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\MarkerToolBoxControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <None Update="Views\AddPlotPageView.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <Page Update="Views\AddPlotBookPageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddResidentPageView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AddResidentWindow.xaml">
@@ -58,6 +85,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PlotBookDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewPlotListPageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewResidentListPageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ViewResidentPageView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

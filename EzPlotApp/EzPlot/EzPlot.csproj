@@ -5,14 +5,20 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Models\Image.cs" />
+    <Compile Remove="Views\AddPlotPageView.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="marker.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Views\AddPlotPageView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,11 +46,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <None Include="Models\Image.cs" />
+    <None Include="Views\AddPlotPageView.xaml" />
+    <None Include="Views\AddPlotPageView.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Models\Image.cs" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

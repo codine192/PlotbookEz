@@ -19,17 +19,9 @@ namespace EzPlot.Models
         private string _label;
         private string _type;
 
-        public virtual Plot Plot { get; set; }
         
-        public int PlotID
-        {
-            get => _plotID;
-            set
-            {
-                _plotID = value;
-                OnPropertyChanged(nameof(PlotID));
-            }
-        }
+        
+       
 
         
         public double X
