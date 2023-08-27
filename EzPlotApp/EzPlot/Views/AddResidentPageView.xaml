@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:EzPlot.Views"
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
       mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="400"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="AddResidentPageView">
     <Page.Resources>
     <Style x:Name="CornFlowerTextBox" TargetType="TextBox">
@@ -15,10 +15,10 @@
     </Style>
     </Page.Resources>
     <Border BorderBrush="CornflowerBlue" BorderThickness="3">
-        <Grid Width="400" Height="400" Background="AliceBlue">
+        <Grid Height="500" Width="800" Background="AliceBlue">
        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
             <ColumnDefinition Width="20*"></ColumnDefinition>
             <ColumnDefinition Width="20*"></ColumnDefinition>
             <ColumnDefinition Width="20*"></ColumnDefinition>
@@ -38,11 +38,11 @@
             <Label Grid.Column="0" Grid.Row="2" Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <TextBox Text="{Binding LastName}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
             <Label Grid.Column="0" Grid.Row="3" Content="DOB" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <DatePicker SelectedDate="{Binding DOB}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Center"/>
+            <DatePicker SelectedDate="{Binding DOB}" Grid.Column="1" Grid.Row="3"  Height="25" VerticalAlignment="Center"/>
             <Label Grid.Column="0" Grid.Row="4" Content="DOD" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <DatePicker SelectedDate="{Binding DOD}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Center" Cursor="Hand"/>
-            <Button  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" 
-                     Click="OnSave_ButtonClick" Content="Save" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3"/>
+            <DatePicker SelectedDate="{Binding DOD}" Grid.Column="1" Grid.Row="4"  Height="25" VerticalAlignment="Center" Cursor="Hand"/>
+            <Button  Grid.Column="4" Grid.Row="5"  Click="OnSave_ButtonClick" Content="Save" Height="25" Width="70"  HorizontalAlignment="Center" BorderBrush="CornflowerBlue" BorderThickness="3"/>
+            <Button  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Click="OnSave_ButtonClick" Content="Cancel" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3"/>
             <Label Grid.Column="0" Grid.Row="5" Content="Date Added" VerticalAlignment="Center" ></Label>
             <TextBox Text="{Binding CurrentDay ,StringFormat='{}{0:yyyy-MM-dd}'}" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"></TextBox>
         </Grid>

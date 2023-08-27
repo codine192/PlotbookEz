@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EzPlot.Views"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        FontFamily="Yu Gothic UI" 
+        FontSize="14"
         mc:Ignorable="d"
         Title="EzPlot" Height="600" Width="1000">
     <Window.Resources>
@@ -45,7 +47,7 @@
             </Grid.RowDefinitions>
             <!-- Top Toolbar -->
             <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left"  Width="Auto" Height="Auto" Background="CornflowerBlue"  Grid.RowSpan="3">
-                <Button Content="Add Resident" Margin="5"  Click="OpenAddResident_ButtonClick" Width="100"/>
+                <Button Content="Add Resident" Margin="5"  Click="OpenAddResident_ButtonClick" Width="100" FontFamily="Yu Gothic UI" FontSize="14"/>
                 <Button Content="View Residents" Margin="5"  Click="OpenViewResidents_ButtonClick" />
                 
                 <Button Content="View Plots" Margin="5"  Click="OpenViewPlots_ButtonClick"/>
