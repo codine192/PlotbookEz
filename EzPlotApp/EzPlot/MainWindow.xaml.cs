@@ -30,6 +30,7 @@ namespace EzPlot
 
         {
            AddResidentPageView addResidentPageView = new AddResidentPageView();
+            addResidentPageView.CloseRequested += CloseChildObject;
             MainFrame.Navigate(addResidentPageView);
         }
         public void OpenViewResidents_ButtonClick(object sender, RoutedEventArgs e)
@@ -54,6 +55,10 @@ namespace EzPlot
             MainFrame.Navigate(mainPage);
         }
 
+        public void CloseChildObject(object sender, EventArgs e)
+        {
+            MainFrame.Content = new MainPage();
+        }
         public MainWindow()
         {
             InitializeComponent();

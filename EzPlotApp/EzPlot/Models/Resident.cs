@@ -18,6 +18,7 @@ namespace EzPlot.Models
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        
         public DateTime BirthDate { get; set; }
         public DateTime DeathDate { get; set; }
         public DateTime DateAdded { get; set; }

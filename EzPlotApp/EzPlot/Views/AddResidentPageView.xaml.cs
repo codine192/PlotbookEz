@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace EzPlot.Views
 {
@@ -28,6 +30,10 @@ namespace EzPlot.Views
         private DateTime dob;
         private DateTime dod;
         private DateTime dateAdded;
+        private BitmapImage headstone;
+        private string headstoneimagepath;
+        private byte[] imageData;
+        public EventHandler CloseRequested;
         public Resident Resident { get; set; }
         public DateTime CurrentDay { get; set; }
 
@@ -126,7 +132,17 @@ namespace EzPlot.Views
             }
 
         }
-
+        public BitmapImage HeadStone
+        {
+            get { return headstone; }
+            set
+            {
+                if (headstone != value)
+                {
+                    headstone = value; OnPropertyChanged(nameof(HeadStone));
+                }
+            }
+        }
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -134,7 +150,44 @@ namespace EzPlot.Views
 
         }
 
+        public void OnUploadImage_ButtonClick(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                headstoneimagepath = openFileDialog.FileName;
+                OnPropertyChanged(nameof(headstoneimagepath));
 
+                // Read the image file into a byte array
+                using (FileStream fs = new FileStream(headstoneimagepath, FileMode.Open, FileAccess.Read))
+                {
+                    imageData = new byte[fs.Length];
+                    fs.Read(imageData, 0, (int)fs.Length);
+                    fs.Close();
+                }
+                using (MemoryStream memoryStream = new MemoryStream(imageData))
+                {
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.StreamSource = memoryStream;
+                    image.EndInit();
+                    HeadStone = image;
+
+                }
+
+            }
+            if (headstone != null)
+            {
+                headStoneContainer.Visibility = Visibility.Visible;
+                uploadButton.Visibility = Visibility.Hidden;
+            }
+        }
+        private void OnCloseButtonClicked(object sender, RoutedEventArgs e)
+        {
+            CloseRequested?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
 

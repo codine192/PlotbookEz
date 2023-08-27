@@ -9,21 +9,21 @@
       d:DesignHeight="500" d:DesignWidth="800"
       Title="AddResidentPageView">
     <Page.Resources>
-    <Style x:Name="CornFlowerTextBox" TargetType="TextBox">
-        <Setter Property="BorderBrush" Value="CornflowerBlue"></Setter>
-        <Setter Property="BorderThickness" Value="2"/>
-    </Style>
+        <Style x:Name="CornFlowerTextBox" TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="CornflowerBlue"></Setter>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
     </Page.Resources>
     <Border BorderBrush="CornflowerBlue" BorderThickness="3">
         <Grid Height="500" Width="800" Background="AliceBlue">
-       
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*"></ColumnDefinition>
-            <ColumnDefinition Width="20*"></ColumnDefinition>
-            <ColumnDefinition Width="20*"></ColumnDefinition>
-            <ColumnDefinition Width="20*"></ColumnDefinition>
-            <ColumnDefinition Width="20*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="10*"></RowDefinition>
                 <RowDefinition Height="10*"></RowDefinition>
@@ -31,7 +31,7 @@
                 <RowDefinition Height="10*"></RowDefinition>
                 <RowDefinition Height="10*"></RowDefinition>
                 <RowDefinition Height="10*"></RowDefinition>
-            </Grid.RowDefinitions>    
+            </Grid.RowDefinitions>
             <Label Grid.Column="1" Content="Add Resident" FontSize="20" Grid.ColumnSpan="3" HorizontalAlignment="Center"></Label>
             <Label Grid.Column="0" Grid.Row="1" Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <TextBox Text="{Binding FirstName}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
@@ -42,9 +42,22 @@
             <Label Grid.Column="0" Grid.Row="4" Content="DOD" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <DatePicker SelectedDate="{Binding DOD}" Grid.Column="1" Grid.Row="4"  Height="25" VerticalAlignment="Center" Cursor="Hand"/>
             <Button  Grid.Column="4" Grid.Row="5"  Click="OnSave_ButtonClick" Content="Save" Height="25" Width="70"  HorizontalAlignment="Center" BorderBrush="CornflowerBlue" BorderThickness="3"/>
-            <Button  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Click="OnSave_ButtonClick" Content="Cancel" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3"/>
+            <Button  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Click="OnCloseButtonClicked" Content="Cancel" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3"/>
             <Label Grid.Column="0" Grid.Row="5" Content="Date Added" VerticalAlignment="Center" ></Label>
             <TextBox Text="{Binding CurrentDay ,StringFormat='{}{0:yyyy-MM-dd}'}" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"></TextBox>
+            <Image x:Name="headStoneContainer" Source="{Binding HeadStone}" Stretch="Uniform"  Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="3" Height="Auto" Width="Auto" Margin="89,16,79,31" Grid.Row="1" />
+            <Button x:Name="uploadButton" Click="OnUploadImage_ButtonClick" Content="Upload Headstone"  Grid.Column="3" Grid.Row="2" Width="110" HorizontalAlignment="Right" Visibility="Visible"/>
+            <Expander Height="380" Header="Contact" Margin="0,22,0,0" VerticalAlignment="Top" Width="402">
+                <Grid >
+                    <StackPanel >
+                        <Label Content="First Name:"/>
+                        
+
+                    </StackPanel>
+                </Grid>
+                
+            </Expander>
+
         </Grid>
     </Border>
 </Page>
