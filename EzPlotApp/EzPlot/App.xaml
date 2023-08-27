@@ -4,11 +4,7 @@
              xmlns:local="clr-namespace:EzPlot"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="Yu Gothic UI"/>
-            <Setter Property="FontSize"   Value="14"/>
-            
-        </Style>
+        
         <Style TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -28,5 +24,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        
+        
     </Application.Resources>
 </Application>
