@@ -157,6 +157,9 @@ namespace EzPlot.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("HeadStoneImageData")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

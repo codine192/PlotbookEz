@@ -28,5 +28,17 @@ namespace EzPlot.Views
             residents = context.Residents.ToList();
             dataGridResidents.ItemsSource = residents;
         }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var grid = (DataGrid)sender;
+            var selected = (Resident)grid.SelectedItem;
+            if (selected != null)
+            {
+                // Navigate to new page
+                 ViewResidentPageView newPage = new ViewResidentPageView(selected);
+                NavigationService.Navigate(newPage);
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace EzPlot.Models
         public int ID { get; set; }
         public int ResidentID { get; set; }
         public virtual Resident Resident { get; set; }
+        //public Marker Marker { get; set; }
         public double X { get; set; }
         public double Y { get; set; }
     }

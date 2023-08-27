@@ -9,7 +9,7 @@
       Title="ViewPlotListPageView">
 
     <Grid Background="AliceBlue">
-        <DataGrid x:Name="dataGridPlots"  d:ItemsSource="{d:SampleData ItemCount=50}"/>
+        <DataGrid x:Name="dataGridPlots"  d:ItemsSource="{d:SampleData ItemCount=50}" MouseDoubleClick="DataGrid_MouseDoubleClick"/>
 
 
     </Grid>

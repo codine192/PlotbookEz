@@ -8,6 +8,27 @@
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
 d:DesignHeight="450" d:DesignWidth="800"
       Title="AddPlotBookPageView">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" Background="{TemplateBinding Background}" 
+            BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="2" 
+            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="Cornflowerblue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
@@ -26,11 +47,14 @@ d:DesignHeight="450" d:DesignWidth="800"
         </Grid.RowDefinitions>
         <Label Content="Add PlotBook" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="35" FontFamily="Cascadia Mono SemiLight" />
         <Label Content="Cemetary" Grid.Row="1"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Cemeteries}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedItem="{Binding SelectedID}"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Cemeteries , UpdateSourceTrigger=PropertyChanged}" Height="25" VerticalAlignment="Top" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedValue="{Binding SelectedID}"/>
         <Label Content="Name" Grid.Row="2"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Name}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding NameOfCem, UpdateSourceTrigger=PropertyChanged}" Height="25" VerticalAlignment="Top"/>
         <Label Content="Arial" Grid.Row="3" Grid.Column="0"/>
         <Button Grid.Column="1" Grid.Row="3" Content="Select Photo" Click="OnUploadImage_ButtonClick"/>
         <Button Grid.Column="4" Grid.Row="4" Content="Save" Click="OnSavePlotBook_ButtonClick"/>
+        
+        <Image Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Source="{Binding UploadedImage, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Height="200" Width="300" ></Image>
+       
     </Grid>
 </Page>

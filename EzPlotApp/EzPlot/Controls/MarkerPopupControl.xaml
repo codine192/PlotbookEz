@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EzPlot.Controls" d:DataContext="{d:DesignInstance local:MarkerPopupControl}"
              mc:Ignorable="d" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
              d:DesignHeight="250" d:DesignWidth="250">
     
     <Border Grid.ColumnSpan="4" Grid.RowSpan="6" BorderBrush="CornflowerBlue" BorderThickness="3">
@@ -27,12 +28,16 @@
 
             
                 <Label Grid.Column="1" Grid.ColumnSpan="3" Width="93" >Add Marker</Label>
-                <Label Grid.Row ="1" Content="Plot : " Width="38" HorizontalAlignment="Left" VerticalAlignment="Center" ></Label>
-                <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Width="150" Height="20" ItemsSource="{Binding PlotsList}"></ComboBox>
-                <Label Grid.Row="2" Content="Resident : " Grid.ColumnSpan="2" VerticalContentAlignment="Center" />
-            <ComboBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Width="150" Height="20" ItemsSource="{Binding ResidentList}" ></ComboBox>
-                <Button Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="Save" Background="CornflowerBlue" Width="50" Height="25"></Button>
-            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Cancel" Background="CornflowerBlue" Width="50" Height="25"></Button>
+
+                <Label Grid.Row="1" Content="Resident : " Grid.ColumnSpan="2" VerticalContentAlignment="Center" />
+            <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Width="150" Height="20" ItemsSource="{Binding ResidentList}" DisplayMemberPath="FullName" SelectedValuePath="ID"  SelectedItem="{Binding Resident}" ></ComboBox>
+            
+            <Label Content="X : " Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center"/>
+            <TextBox Text="{Binding X}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Width="75" Height="25" VerticalAlignment="Top"></TextBox>
+            <Label Content="Y : " Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center"/>
+            <TextBox Text="{Binding Y}" Grid.Row="4" Grid.Column="1" Width="75" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
+            <Button Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="Save" Click="OnSaveButtonClicked" Background="CornflowerBlue" Width="50" Height="25"></Button>
+            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Cancel" Click="OnCloseButtonClicked" Background="CornflowerBlue" Width="50" Height="25"></Button>
 
 
 

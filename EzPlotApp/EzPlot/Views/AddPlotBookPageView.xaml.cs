@@ -30,10 +30,23 @@ namespace EzPlot.Views
 
 
     {
-        public PlotBook PlotBook { get; set; }
-        public Cemetery cemetary { get; set; }
+        
+        public Cemetery cemetery { get; set; }
         public List<Cemetery> Cemeteries { get; set; }
         private int selectedID;
+        private BitmapImage uploadedImage;
+        public BitmapImage UploadedImage
+        {
+            get { return uploadedImage; }
+            set
+            {
+                if (uploadedImage != value)
+                {
+                    uploadedImage = value;
+                    OnPropertyChanged(nameof(UploadedImage));
+                }
+            }
+        }
         public int SelectedID
         {
             get { return selectedID; }
@@ -49,7 +62,7 @@ namespace EzPlot.Views
 
         }
         private string name;
-        public string Name
+        public string NameOfCem
         {
             get { return name; }
             set
@@ -57,7 +70,7 @@ namespace EzPlot.Views
                 if (name != value)
                 {
                     name = value;
-                    OnPropertyChanged(nameof(Name));
+                    OnPropertyChanged(nameof(NameOfCem));
                 }
             }
         }
@@ -81,11 +94,14 @@ namespace EzPlot.Views
 
         public AddPlotBookPageView()
         {
+            
+
             using var context = new MYDBContext();
             Cemeteries = context.Cemeteries.ToList();
             InitializeComponent();
             
-            
+
+
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -109,17 +125,40 @@ namespace EzPlot.Views
                     fs.Read(imageData, 0, (int)fs.Length);
                     fs.Close();
                 }
+                using (MemoryStream memoryStream = new MemoryStream(imageData))
+                {
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.StreamSource = memoryStream;
+                    image.EndInit();
+                    UploadedImage = image;
+                   
+                }
             }
         }
         public void OnSavePlotBook_ButtonClick(object sender, RoutedEventArgs e)
         {
-            PlotBook.name = Name;
-            PlotBook.image = Image;
-            PlotBook.CemeteryID = SelectedID;
+            PlotBook Plotbook = new PlotBook();
+            Plotbook.name = Name;
+            Plotbook.image = Image;
+            Plotbook.CemeteryID = SelectedID;
             using var context = new MYDBContext();
-            context.PlotBooks.Add(PlotBook);
+            context.PlotBooks.Add(Plotbook);
             int isSaved = context.SaveChanges();
-            if (isSaved == 0) { }
+            if (isSaved > 0)
+            {
+                App.SelectedPlotBook = Plotbook;
+                MessageBox.Show("Record successfully added!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigationService.Navigate(new Uri("Views/MainPage.xaml", UriKind.Relative));
+                
+            }
+            else
+            {
+                MessageBox.Show("Failed to add record.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                NavigationService.Navigate(new Uri("Views/MainPage.xaml", UriKind.Relative));
+            }
+
         }
     }
 }

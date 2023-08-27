@@ -28,10 +28,10 @@
     <Compile Update="Views\AddResidentPageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\AddResidentWindow.xaml.cs">
+    <Compile Update="old\AddResidentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LoadPlotBookWindow.xaml.cs">
+    <Compile Update="old\LoadPlotBookWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Controls\MarkerControl.xaml.cs">
@@ -43,7 +43,7 @@
     <Compile Update="Views\MarkerToolBoxView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\PlotBookDetailsWindow.xaml.cs">
+    <Compile Update="old\PlotBookDetailsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\ViewResidentPageView.xaml.cs">
@@ -66,10 +66,10 @@
     <Page Update="Views\AddResidentPageView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddResidentWindow.xaml">
+    <Page Update="old\AddResidentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LoadPlotBookWindow.xaml">
+    <Page Update="old\LoadPlotBookWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -84,7 +84,7 @@
     <Page Update="Views\MarkerToolBoxView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\PlotBookDetailsWindow.xaml">
+    <Page Update="old\PlotBookDetailsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ViewPlotListPageView.xaml">

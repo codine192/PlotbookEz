@@ -31,14 +31,15 @@ namespace EzPlot.Views
         private bool isAddingMarker = false;
         private bool awaitingClick = false;
         public event EventHandler LeftButton_Pressed;
-        public event EventHandler MarkerAdded;
+        public event EventHandler<MarkerEventArgs> MarkerAdded;
+     
         public ObservableCollection<Resident> UnassignedResidents { get; set; }
         public ObservableCollection<Plot> UnassignedPlots { get; set; }
         public ObservableCollection<Resident> Residents { get; set; }
         public ObservableCollection<Cemetery> Cemetaries { get; set; } 
         
         public BitmapImage image { get; set; }
-        public ObservableCollection<Marker> Markers { get; set; }
+        public ObservableCollection<Plot> Markers { get; set; }
         public Marker CemeteryMarker { get; set; }
         public Plot Plot { get; set; }
         
@@ -46,21 +47,26 @@ namespace EzPlot.Views
         public MainPage()
 
         {
+            using var db = new MYDBContext();
+            Markers = new ObservableCollection<Plot>(db.Plots);
 
             InitializeComponent();
             this.DataContext = this;
 
             if (selectedPlotBook == null) { mapImage.Source = App.defaultImage;}
-            else { mapImage.Source = ConvertByteArrayToBitmapImage(selectedPlotBook.image); }
+            else { mapImage.Source = ConvertByteArrayToBitmapImage(App.SelectedPlotBook.image) ; }
             markerToolBoxControl.PlaceMarkerModeActivated += ToolBox_PlacingMarkerModeActivated;
             markerToolBoxControl.RemoveMarkerModeActivated += ToolBox_RemoveMarkerModeDeactivated;
             MarkerAdded += OpenMarkerPopup;
-            using var db = new MYDBContext();
+        
+           
+
+            
             UnassignedResidents = new ObservableCollection<Resident>(db.Residents.Where(r => r.AssignedToPlot == false));
-            UnassignedPlots = new ObservableCollection<Plot>(db.Plots.Where(p => p.ResidentID == null));
+            
             Cemetaries = new ObservableCollection<Cemetery>(db.Cemeteries);
             
-            
+            DrawMarker();
 
             
         }
@@ -99,7 +105,7 @@ namespace EzPlot.Views
                 Canvas.SetTop(markerRepresenter, pos.Y);
                 OverlayCanvas.Children.Add(markerRepresenter);
                 // Set the popup's position and show it
-              MarkerAdded?.Invoke(this, new EventArgs());
+              MarkerAdded?.Invoke(this, new MarkerEventArgs(pos));
                 
                
 
@@ -113,13 +119,13 @@ namespace EzPlot.Views
                 }
             }
         }
-        public void OpenMarkerPopup(object sender, EventArgs e)
+        public void OpenMarkerPopup(object sender,MarkerEventArgs e)
         {
            if (isPlacingMarker)
             {
                 OverlayCanvas.Cursor = Cursors.Arrow;
-                MarkerPopupControl markerPopupControl = new MarkerPopupControl();
-                { markerPopupControl.ResidentListData = UnassignedResidents; markerPopupControl.PlotListData = UnassignedPlots; }
+                MarkerPopupControl markerPopupControl = new MarkerPopupControl(e.Point);
+                { markerPopupControl.ResidentListData = UnassignedResidents; }
 
                         
 
@@ -129,6 +135,7 @@ namespace EzPlot.Views
                 OverlayCanvas.Children.Add(markerPopupControl);
                 
                 markerPopupControl.Visibility = Visibility.Visible;
+                markerPopupControl.CloseRequested += CloseChildItem;
                 awaitingClick = false;
             }
         }
@@ -151,6 +158,34 @@ namespace EzPlot.Views
             }
             image.Freeze();
             return image;
+        }
+        public void DrawMarker()
+        {
+            foreach (var plot in  Markers)
+            {
+                MarkerControl drawMarker = new();
+                Canvas.SetLeft(drawMarker, plot.X);
+                Canvas.SetTop(drawMarker, plot.Y);
+                OverlayCanvas.Children.Add(drawMarker); drawMarker.Visibility = Visibility.Visible;
+            }
+        }
+        public void CloseChildItem(object sender, EventArgs e)
+        {
+            Console.WriteLine("Test");
+            if (OverlayCanvas.Children.Contains(sender as UIElement))
+            {
+                OverlayCanvas.Children.Remove(sender as UIElement);
+            }
+
+        }
+    }
+        
+    public class MarkerEventArgs : EventArgs
+    {
+        public Point Point { get; set; }
+        public MarkerEventArgs(Point point)
+        {
+            this.Point = point;
         }
     }
 }

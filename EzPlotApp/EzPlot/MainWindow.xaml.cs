@@ -48,7 +48,11 @@ namespace EzPlot
             AddPlotBookPageView addPlotBookPageView = new AddPlotBookPageView();
             MainFrame.Navigate(addPlotBookPageView);
         }
-
+        public void OpenMap_ButtonClick(Object sender, RoutedEventArgs e)
+        {
+            MainPage mainPage = new();
+            MainFrame.Navigate(mainPage);
+        }
 
         public MainWindow()
         {

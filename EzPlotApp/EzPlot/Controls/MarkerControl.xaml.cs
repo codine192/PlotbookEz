@@ -18,6 +18,7 @@ namespace EzPlot.Controls
 {
     public partial class MarkerControl : UserControl
     {
+        public EventHandler CancelClicked;
         public Marker MarkerData
         {
             get { return (Marker)GetValue(MarkerDataProperty); }
@@ -45,7 +46,10 @@ namespace EzPlot.Controls
             var control = d as MarkerControl;
             control.DataContext = e.NewValue as Marker;
         }
-
+        public void OnCancel_ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            CancelClicked?.Invoke(this, e);
+        }
         public MarkerControl()
         {
             InitializeComponent();

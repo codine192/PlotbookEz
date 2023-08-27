@@ -114,7 +114,16 @@ namespace EzPlot.Views
             Resident.BirthDate = DOB;
             Resident.DateAdded = DateTime.Now;
             context.Residents.Add(Resident);
-            int changeSaved = context.SaveChanges();
+            int isSaved = context.SaveChanges();
+            if (isSaved > 0)
+            {
+                MessageBox.Show("Record successfully added!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigationService.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else
+            {
+                MessageBox.Show("Failed to add record.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
 

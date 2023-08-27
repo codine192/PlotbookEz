@@ -33,10 +33,10 @@
                 
                 <control:MarkerToolBoxControl x:Name="markerToolBoxControl" Grid.Column="4" Grid.Row="0"></control:MarkerToolBoxControl>
                 
-                
 
-                    
-               
+
+
+
             </Canvas>
         </Grid>
     </Border>
