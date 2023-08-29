@@ -61,13 +61,13 @@
                         <Label Content="Zip:"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1"  >
-                        <TextBox Text="First Name" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="Last Name" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="555-555-5555" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="example@example.com" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="100 Street Road" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="Alaska" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="39208" Height="25" Padding="3" Margin="2"></TextBox>
+                        <TextBox Text="{Binding ContactFirstName}" Height="25" Padding="3" Margin="2"  ></TextBox>
+                        <TextBox Text="{Binding ContactLastName}" Height="25" Padding="3" Margin="2"></TextBox>
+                        <TextBox Text="{Binding ContactPhone}" Height="25" Padding="3" Margin="2"></TextBox>
+                        <TextBox Text="{Binding ContactEmail}" Height="25" Padding="3" Margin="2"></TextBox>
+                        <TextBox Text="{Binding ContactAddress}" Height="25" Padding="3" Margin="2"></TextBox>
+                        <TextBox Text="{Binding ContactState}" Height="25" Padding="3" Margin="2"></TextBox>
+                        <TextBox Text="{Binding ContactZip}" Height="25" Padding="3" Margin="2"></TextBox>
                     </StackPanel>
                 </Grid>
 
@@ -78,9 +78,9 @@
             <Label Grid.Column="0" Grid.Row="2" Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             <TextBox Text="{Binding LastName}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
             <Label Grid.Column="0" Grid.Row="3" Content="DOB" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <DatePicker SelectedDate="{Binding DOB}" Grid.Column="1" Grid.Row="3"  Height="25" VerticalAlignment="Center"/>
+            <DatePicker SelectedDate="{Binding DOB}" Grid.Column="1" Grid.Row="3"  Height="25" VerticalAlignment="Center" DisplayDate="1990-01-01"/>
             <Label Grid.Column="0" Grid.Row="4" Content="DOD" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <DatePicker SelectedDate="{Binding DOD}" Grid.Column="1" Grid.Row="4"  Height="25" VerticalAlignment="Center" Cursor="Hand"/>
+            <DatePicker SelectedDate="{Binding DOD}" Grid.Column="1" Grid.Row="4"  Height="25" VerticalAlignment="Center" Cursor="Hand" DisplayDate="1990-01-01"/>
             <Button  Grid.Column="4" Grid.Row="5"  Click="OnSave_ButtonClick" Content="Save" Height="25" Width="70"  HorizontalAlignment="Center" BorderBrush="CornflowerBlue" BorderThickness="3"/>
             <Button  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Click="OnCloseButtonClicked" Content="Cancel" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3"/>
             <Label Grid.Column="0" Grid.Row="5" Content="Date Added" VerticalAlignment="Center" ></Label>

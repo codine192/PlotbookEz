@@ -225,6 +225,15 @@ namespace EzPlot.Views
             Resident.DeathDate = DOD;
             Resident.BirthDate = DOB;
             Resident.DateAdded = DateTime.Now;
+            Resident.Contact.FirstName = ContactFirstName;
+            Resident.Contact.LastName = ContactLastName;
+            Resident.Contact.Phone = ContactPhone;
+
+            Resident.Contact.City = ContactCity;
+            Resident.Contact.Address = ContactAddress;
+            Resident.Contact.State = ContactState;
+            Resident.Contact.ZipCode = ContactZip;
+            Resident.Contact.Email = ContactEmail;
             context.Residents.Add(Resident);
             int isSaved = context.SaveChanges();
             if (isSaved > 0)
