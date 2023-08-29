@@ -97,7 +97,113 @@ namespace EzPlot.Views
                 }
             }
         }
+        //Expander Content//
+        //Contact Info
+        private string _contactFirstName;
+        private string _contactLastName;
+        private string _contactEmail;
+        private string _contactPhone;
+        private string _contactAddress;
+        private string _contactCity;
+        private string _contactState;
+        private string _contactZip;
 
+        public string ContactFirstName
+        {
+            get { return _contactFirstName; }
+            set
+            {
+                if (_contactFirstName != value)
+                {
+                    _contactFirstName = value;
+                    OnPropertyChanged(nameof(ContactFirstName));
+                }
+            }
+        }
+        public string ContactLastName
+        {
+            get { return _contactLastName; }
+            set
+            {
+                if (_contactLastName != value)
+                {
+                    _contactLastName = value;
+                    OnPropertyChanged(nameof(ContactLastName));
+                }
+            }
+        }
+        public string ContactEmail
+        {
+            get { return _contactEmail; }
+            set
+            {
+                if (_contactEmail != value)
+                {
+                    _contactEmail = value;
+                    OnPropertyChanged(nameof(ContactEmail));
+                }
+            }
+        }
+        public string ContactPhone
+        {
+            get { return _contactPhone; }
+            set
+            {
+                if (_contactPhone != value)
+                {
+                    _contactPhone = value;
+                    OnPropertyChanged(nameof(ContactPhone));
+                }
+            }
+        }
+        public string ContactAddress
+        {
+            get { return _contactAddress; }
+            set
+            {
+                if (_contactAddress != value)
+                {
+                    _contactAddress = value;
+                    OnPropertyChanged(nameof(ContactAddress));
+                }
+            }
+        }
+        public string ContactCity
+        {
+            get { return _contactCity; }
+            set
+            {
+                if (_contactCity != value)
+                {
+                    _contactCity = value;
+                    OnPropertyChanged(nameof(ContactCity));
+                }
+            }
+        }
+        public string ContactState
+        {
+            get { return _contactState; }
+            set
+            {
+                if (_contactState != value)
+                {
+                    _contactState = value;
+                    OnPropertyChanged(nameof(ContactState));
+                }
+            }
+        }
+        public string ContactZip
+        {
+            get { return _contactZip; }
+            set
+            {
+                if (_contactZip != value)
+                {
+                    _contactZip = value;
+                    OnPropertyChanged(nameof(ContactZip));
+                }
+            }
+        }
 
 
       
