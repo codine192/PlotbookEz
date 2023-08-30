@@ -107,4 +107,3 @@ C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-wind
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\old\AddResidentWindow.baml
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\old\LoadPlotBookWindow.baml
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\old\PlotBookDetailsWindow.baml
-C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\App.baml

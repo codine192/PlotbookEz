@@ -35,6 +35,7 @@ namespace EzPlot.Views
         private byte[] imageData;
         public EventHandler CloseRequested;
         public Resident Resident { get; set; }
+        public Contact Contact { get; set; }
         public DateTime CurrentDay { get; set; }
 
         public DateTime DOB
@@ -212,6 +213,9 @@ namespace EzPlot.Views
             CurrentDay = DateTime.Now;
             InitializeComponent();
             Resident = new Resident();
+            Contact = new Contact();
+            Resident.Contact = Contact;
+
 
         }
 
@@ -228,12 +232,13 @@ namespace EzPlot.Views
             Resident.Contact.FirstName = ContactFirstName;
             Resident.Contact.LastName = ContactLastName;
             Resident.Contact.Phone = ContactPhone;
-
             Resident.Contact.City = ContactCity;
             Resident.Contact.Address = ContactAddress;
             Resident.Contact.State = ContactState;
             Resident.Contact.ZipCode = ContactZip;
             Resident.Contact.Email = ContactEmail;
+
+            if (imageData  != null) { Resident.HeadStoneImageData = imageData; }
             context.Residents.Add(Resident);
             int isSaved = context.SaveChanges();
             if (isSaved > 0)
