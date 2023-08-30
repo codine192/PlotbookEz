@@ -9,7 +9,7 @@
         FontSize="14"
         
         mc:Ignorable="d"
-        Title="EzPlot" Height="600" Width="1000">
+        Title="EzPlot" Height="600" Width="1150">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Template">
@@ -30,6 +30,48 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}" BorderBrush="Brown">
+                            <Grid>
+                                <ToggleButton Grid.Column="2" Focusable="false" Width="50" Height="50"
+                                IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                ClickMode="Press">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate>
+                                            <Path Name="Arrow" Fill="CornflowerBlue" HorizontalAlignment="Center" VerticalAlignment="Center"  Data="M 0,0 L 4,4 L 8,0 Z"/>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <ContentPresenter Name="ContentSite" IsHitTestVisible="False"
+                                Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="3" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <TextBox x:Name="PART_EditableTextBox" Margin="3" VerticalAlignment="Center" HorizontalAlignment="Left" Background="Transparent"
+                                Focusable="True" Visibility="Hidden" IsReadOnly="{TemplateBinding IsReadOnly}">
+                                    <TextBox.Template>
+                                        <ControlTemplate>
+                                            <Border x:Name="PART_ContentHost" Focusable="False" />
+                                        </ControlTemplate>
+                                    </TextBox.Template>
+                                </TextBox>
+                                <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True"
+                                   Focusable="False" PopupAnimation="Slide">
+                                    <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                        <Border x:Name="DropDownBorder" Background="White" BorderThickness="1" CornerRadius="8" />
+                                        <ScrollViewer Margin="4,6" SnapsToDevicePixels="True">
+                                            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
 
 
 
@@ -60,15 +102,15 @@
             <Button Content="Change PlotBook" Grid.Column="0" Click="OpenPopupButton_Click" Grid.Row="4" Height="25" VerticalAlignment="top"/>
             <Button Content="Map" Grid.Column="0" Grid.Row="4" Height="25" Click="OpenMap_ButtonClick" Width="150"/>
             <Button Content="Add PlotBook" Margin="5" Grid.Column="0" Grid.Row="1" Height="25" Click="OpenAddPlotBook_ButtonClick" VerticalAlignment="Bottom"/>
-            <Popup  x:Name="LoadPlotBook" Placement="Center" PopupAnimation="Slide" AllowsTransparency="True" >
+            <Popup  x:Name="LoadPlotBook" Placement="Mouse" PopupAnimation="Slide" AllowsTransparency="True" >
                 <DockPanel  Height="Auto" Width="Auto">
-                    <Border CornerRadius="8" BorderThickness="4" BorderBrush="BurlyWood">
-                        <ComboBox DockPanel.Dock="Left" Grid.Row="1" Height="30" Width="150" ItemsSource="{Binding PlotBooks}" DisplayMemberPath="name" SelectedValuePath="{Binding SelectedPlotBook}">
+                    
+                        <ComboBox  DockPanel.Dock="Left" Grid.Row="1" Height="30" Width="150" ItemsSource="{Binding PlotBooks}" DisplayMemberPath="name" SelectedItem="{Binding SelectedPlotBook}">
                     
                     </ComboBox>
-                    </Border>
-                    <Button DockPanel.Dock="Right" Content="Load" Width="40"></Button>
-                    <Button DockPanel.Dock="Right" Content="Cancel" Width="60"></Button>
+                   
+                    <Button DockPanel.Dock="Right" Content="Load" Click="OnLoadPlotBook_ButtonClick" Width="40"></Button>
+                    <Button DockPanel.Dock="Right" Click="ClosePopupButton_Click" Content="Cancel" Width="60"></Button>
                 </DockPanel>
             </Popup>
 

@@ -124,6 +124,4 @@ C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-wind
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-windows\ru\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-windows\sv\Xceed.Wpf.AvalonDock.NET5.resources.dll
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.NET5.resources.dll
-C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\Views\Page1.g.cs
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\App.baml
-C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\Views\Page1.baml

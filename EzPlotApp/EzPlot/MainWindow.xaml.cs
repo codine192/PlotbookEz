@@ -19,16 +19,36 @@ using System.Windows.Shapes;
 using System.Windows.Ink;
 using EzPlot.Views;
 using System.Windows.Controls.Primitives;
+using System.ComponentModel;
 
 namespace EzPlot
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public List<PlotBook> PlotBooks { get; set; }
-        public PlotBook SelectedPlotBook { get; set; }
+        private PlotBook selectedPlotBook;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+
+        }
+        public PlotBook SelectedPlotBook
+        {
+            get { return selectedPlotBook; }
+            set { if (selectedPlotBook != value)
+                    {
+                    selectedPlotBook = value;
+                    OnPropertyChanged(nameof(SelectedPlotBook));
+                     }
+                }
+        }
+
         public void OpenAddResident_ButtonClick(object sender, RoutedEventArgs e)
 
         {
@@ -61,10 +81,20 @@ namespace EzPlot
         {
             LoadPlotBook.IsOpen = true;
         }
+        private void ClosePopupButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPlotBook.IsOpen = false;
+        }
 
         public void CloseChildObject(object sender, EventArgs e)
         {
             MainFrame.Content = new MainPage();
+        }
+        public void OnLoadPlotBook_ButtonClick(object sender, RoutedEventArgs e)
+        {
+            App.SelectedPlotBook = SelectedPlotBook;
+            LoadPlotBook.IsOpen = false;
+            MainFrame.Refresh();
         }
         public MainWindow()
         {
