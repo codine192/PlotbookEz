@@ -18,6 +18,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Ink;
 using EzPlot.Views;
+using System.Windows.Controls.Primitives;
+
 namespace EzPlot
 {
     /// <summary>
@@ -25,7 +27,8 @@ namespace EzPlot
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public List<PlotBook> PlotBooks { get; set; }
+        public PlotBook SelectedPlotBook { get; set; }
         public void OpenAddResident_ButtonClick(object sender, RoutedEventArgs e)
 
         {
@@ -54,6 +57,10 @@ namespace EzPlot
             MainPage mainPage = new();
             MainFrame.Navigate(mainPage);
         }
+        private void OpenPopupButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPlotBook.IsOpen = true;
+        }
 
         public void CloseChildObject(object sender, EventArgs e)
         {
@@ -61,7 +68,10 @@ namespace EzPlot
         }
         public MainWindow()
         {
+            using var context = new MYDBContext();
+            PlotBooks = context.PlotBooks.ToList();
             InitializeComponent();
+            
             this.DataContext = this;
             // Navigate to Page1.xaml
             MainFrame.Source=(new Uri("Views/MainPage.xaml", UriKind.Relative));

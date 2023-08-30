@@ -30,7 +30,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
 
 
     </Window.Resources>
@@ -48,18 +48,29 @@
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
             <!-- Top Toolbar -->
-            <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left"  Width="Auto" Height="Auto" Background="CornflowerBlue"  Grid.RowSpan="3">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Width="150" Height="Auto" Background="CornflowerBlue"  Grid.RowSpan="3">
                 <Button Content="Add Resident" Margin="5"  Click="OpenAddResident_ButtonClick" Width="100" FontFamily="Yu Gothic UI" FontSize="14"/>
                 <Button Content="View Residents" Margin="5"  Click="OpenViewResidents_ButtonClick" />
-                
+
                 <Button Content="View Plots" Margin="5"  Click="OpenViewPlots_ButtonClick"/>
-                
-                
+
+
             </StackPanel>
             <Frame Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Name="MainFrame" NavigationUIVisibility="Automatic" Height="Auto" Width="Auto" BorderBrush="CornflowerBlue"/>
-            <Button Content="Map" Grid.Column="0" Grid.Row="4" Height="25" Click="OpenMap_ButtonClick"/>
+            <Button Content="Change PlotBook" Grid.Column="0" Click="OpenPopupButton_Click" Grid.Row="4" Height="25" VerticalAlignment="top"/>
+            <Button Content="Map" Grid.Column="0" Grid.Row="4" Height="25" Click="OpenMap_ButtonClick" Width="150"/>
             <Button Content="Add PlotBook" Margin="5" Grid.Column="0" Grid.Row="1" Height="25" Click="OpenAddPlotBook_ButtonClick" VerticalAlignment="Bottom"/>
-
+            <Popup  x:Name="LoadPlotBook" Placement="Center" PopupAnimation="Slide" AllowsTransparency="True" >
+                <DockPanel  Height="Auto" Width="Auto">
+                    <Border CornerRadius="8" BorderThickness="4" BorderBrush="BurlyWood">
+                        <ComboBox DockPanel.Dock="Left" Grid.Row="1" Height="30" Width="150" ItemsSource="{Binding PlotBooks}" DisplayMemberPath="name" SelectedValuePath="{Binding SelectedPlotBook}">
+                    
+                    </ComboBox>
+                    </Border>
+                    <Button DockPanel.Dock="Right" Content="Load" Width="40"></Button>
+                    <Button DockPanel.Dock="Right" Content="Cancel" Width="60"></Button>
+                </DockPanel>
+            </Popup>
 
 
 
