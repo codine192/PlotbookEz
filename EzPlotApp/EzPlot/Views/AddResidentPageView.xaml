@@ -24,6 +24,7 @@
             <Setter Property="Margin" Value="3"/>
             <Setter Property="Width" Value="100"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="Yu Gothic UI"/>
         </Style>
         <Style x:Name="Date" TargetType="DatePicker">
             <Setter Property="BorderBrush" Value="CornflowerBlue"></Setter>
@@ -60,8 +61,10 @@
                 <RowDefinition Height="83*"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Content=" ADD RESIDENT" FontSize="40" Grid.Column="3" Grid.ColumnSpan="2" Margin="3,3,0,3" Width="332" FontWeight="Heavy" Foreground="White" BorderThickness="0"/>
-            <DockPanel Grid.Column="0" Grid.Row="0" Margin="5,20,0,0"  Grid.ColumnSpan="3" Grid.RowSpan="3">
-                <StackPanel DockPanel.Dock="Left">
+            <StackPanel Grid.Column="0" Grid.Row="0"   Grid.ColumnSpan="3" Grid.RowSpan="7" VerticalAlignment="Center">
+                <Expander ExpandDirection="Up" Header="Resident" IsExpanded="True">
+                <DockPanel >
+                    <StackPanel DockPanel.Dock="Left">
                     <Label Content="First Name"/>
                     <Label Content="Last Name"/>
                     <Label Content="DOB"/>
@@ -80,7 +83,8 @@
 
                 </StackPanel>
             </DockPanel>
-            <Expander Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="3" Margin="0,71,50,0" Header="Primary Contact" VerticalAlignment="Top" Height="286" IsExpanded="True">
+                </Expander>
+            <Expander Header="Contact" ExpandDirection="Down">
 
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Left" >
@@ -105,6 +109,7 @@
 
 
             </Expander>
+            </StackPanel>
 
             <Button  Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" Click="OnCloseButtonClicked" Content="Cancel" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3" />
             <Button  Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2" Click="OnSave_ButtonClick" Content="Save" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3" />
