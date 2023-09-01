@@ -51,6 +51,45 @@ namespace EzPlot.Migrations
                         });
                 });
 
+            modelBuilder.Entity("EzPlot.Models.Contact", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZipCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Contact");
+                });
+
             modelBuilder.Entity("EzPlot.Models.Marker", b =>
                 {
                     b.Property<int>("ID")
@@ -147,6 +186,9 @@ namespace EzPlot.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("ContactID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateAdded")
                         .HasColumnType("datetime2");
 
@@ -165,6 +207,8 @@ namespace EzPlot.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ContactID");
 
                     b.ToTable("Residents");
                 });
@@ -193,6 +237,15 @@ namespace EzPlot.Migrations
                         .IsRequired();
 
                     b.Navigation("Cemetery");
+                });
+
+            modelBuilder.Entity("EzPlot.Models.Resident", b =>
+                {
+                    b.HasOne("EzPlot.Models.Contact", "Contact")
+                        .WithMany()
+                        .HasForeignKey("ContactID");
+
+                    b.Navigation("Contact");
                 });
 
             modelBuilder.Entity("EzPlot.Models.Cemetery", b =>

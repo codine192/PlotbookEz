@@ -12,11 +12,31 @@
         <Style x:Name="CornFlowerTextBox" TargetType="TextBox">
             <Setter Property="BorderBrush" Value="CornflowerBlue"></Setter>
             <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
 
+        </Style>
+        <Style x:Name="Label" TargetType="Label">
+            <Setter Property="BorderBrush" Value="CornflowerBlue"></Setter>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="Yu Gothic UI"/>
+        </Style>
+        <Style x:Name="Date" TargetType="DatePicker">
+            <Setter Property="BorderBrush" Value="CornflowerBlue"></Setter>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
     </Page.Resources>
     <Border BorderBrush="CornflowerBlue" BorderThickness="3" >
-        <Grid Height="600" Width="900" >
+        <Grid Height="550" Width="865" >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB6BBFF" Offset="1"/>
@@ -32,62 +52,73 @@
                 <ColumnDefinition Width="20*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="83*"></RowDefinition>
+                <RowDefinition Height="83*"></RowDefinition>
+                <RowDefinition Height="83*"></RowDefinition>
+                <RowDefinition Height="83*"></RowDefinition>
+                <RowDefinition Height="83*"></RowDefinition>
+                <RowDefinition Height="83*"></RowDefinition>
+                <RowDefinition Height="83*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Expander Header="Contact" Height="224" Width="400" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3" Panel.ZIndex="1">
-                <Grid Height="225" Width="400" Opacity="50" OpacityMask="#FFBD6666" >
-                    <Grid.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF8DD8FF" Offset="1"/>
-                            <GradientStop Color="#FFB5B2FF" Offset="0.173"/>
-                        </LinearGradientBrush>
-                    </Grid.Background>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="75*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" >
-                        <Label Content="First Name:"/>
-                        <Label Content="Last Name:"/>
-                        <Label Content="Phone:"/>
-                        <Label Content="Email:"/>
-                        <Label Content="Street Address:"/>
-                        <Label Content="State:"/>
-                        <Label Content="Zip:"/>
+            <Label Content=" ADD RESIDENT" FontSize="40" Grid.Column="3" Grid.ColumnSpan="2" Margin="3,3,0,3" Width="332" FontWeight="Heavy" Foreground="White" BorderThickness="0"/>
+            <StackPanel Grid.Column="0" Grid.Row="0"   Grid.ColumnSpan="3" Grid.RowSpan="7" VerticalAlignment="Center">
+                <Expander ExpandDirection="Up" Header="Resident" IsExpanded="True">
+                <DockPanel >
+                    <StackPanel DockPanel.Dock="Left">
+                    <Label Content="First Name"/>
+                    <Label Content="Last Name"/>
+                    <Label Content="DOB"/>
+                    <Label Content="DOD"/>
+                    <Label Content="Date Added"/>
+
+
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Right" >
+                    <TextBox Text="{Binding FirstName}" />
+                    <TextBox Text="{Binding LastName}"/>
+                    <DatePicker SelectedDate="{Binding DOB}"/>
+                    <DatePicker SelectedDate="{Binding DOD}"/>
+                    <TextBox Text="{Binding DateAdded}"/>
+
+
+                </StackPanel>
+            </DockPanel>
+                </Expander>
+            <Expander Header="Contact" ExpandDirection="Down">
+
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Left" >
+                        <Label Content="First Name:" />
+                        <Label Content="Last Name:" />
+                        <Label Content="Phone:" />
+                        <Label Content="Email:" />
+                        <Label Content="Street Address:"  />
+                        <Label Content="State:"  />
+                        <Label Content="Zip:" />
                     </StackPanel>
-                    <StackPanel Grid.Column="1"  >
-                        <TextBox Text="First Name" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="Last Name" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="555-555-5555" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="example@example.com" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="100 Street Road" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="Alaska" Height="25" Padding="3" Margin="2"></TextBox>
-                        <TextBox Text="39208" Height="25" Padding="3" Margin="2"></TextBox>
+                    <StackPanel DockPanel.Dock="Right" >
+                        <TextBox Text="{Binding ContactFirstName}"></TextBox>
+                        <TextBox Text="{Binding ContactLastName}"></TextBox>
+                        <TextBox Text="{Binding ContactPhone}" ></TextBox>
+                        <TextBox Text="{Binding ContactEmail}" ></TextBox>
+                        <TextBox Text="{Binding ContactAddress}" ></TextBox>
+                        <TextBox Text="{Binding ContactState}" ></TextBox>
+                        <TextBox Text="{Binding ContactZip}" ></TextBox>
                     </StackPanel>
-                </Grid>
+                </DockPanel>
+
 
             </Expander>
-            <Label Grid.Column="1" Content="Add Resident" FontSize="20" Grid.ColumnSpan="3" HorizontalAlignment="Center"></Label>
-            <Label Grid.Column="0" Grid.Row="1" Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <TextBox Text="{Binding FirstName}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
-            <Label Grid.Column="0" Grid.Row="2" Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <TextBox Text="{Binding LastName}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Width="150" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
-            <Label Grid.Column="0" Grid.Row="3" Content="DOB" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <DatePicker SelectedDate="{Binding DOB}" Grid.Column="1" Grid.Row="3"  Height="25" VerticalAlignment="Center"/>
-            <Label Grid.Column="0" Grid.Row="4" Content="DOD" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-            <DatePicker SelectedDate="{Binding DOD}" Grid.Column="1" Grid.Row="4"  Height="25" VerticalAlignment="Center" Cursor="Hand"/>
-            <Button  Grid.Column="4" Grid.Row="5"  Click="OnSave_ButtonClick" Content="Save" Height="25" Width="70"  HorizontalAlignment="Center" BorderBrush="CornflowerBlue" BorderThickness="3"/>
-            <Button  Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Click="OnCloseButtonClicked" Content="Cancel" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3"/>
-            <Label Grid.Column="0" Grid.Row="5" Content="Date Added" VerticalAlignment="Center" ></Label>
-            <TextBox Text="{Binding CurrentDay ,StringFormat='{}{0:yyyy-MM-dd}'}" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"></TextBox>
-            <Image x:Name="headStoneContainer" Source="{Binding HeadStone}" Stretch="Uniform"  Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="3" Height="Auto" Width="Auto" Margin="89,16,79,31" Grid.Row="1" />
-            <Button x:Name="uploadButton" Click="OnUploadImage_ButtonClick" Content="Upload Headstone"  Grid.Column="3" Grid.Row="2" Width="110" HorizontalAlignment="Right" Visibility="Visible"/>
-         
+            </StackPanel>
+
+            <Button  Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" Click="OnCloseButtonClicked" Content="Cancel" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3" />
+            <Button  Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2" Click="OnSave_ButtonClick" Content="Save" Height="25" Width="70" BorderBrush="CornflowerBlue" BorderThickness="3" />
+
+            <Image x:Name="headStoneContainer" Source="{Binding HeadStone}" Stretch="UniformToFill" Grid.Column="3" Grid.Row="1"  Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="0,78,19,0"/>
+            <Button x:Name="uploadButton" Click="OnUploadImage_ButtonClick" Content="Upload Headstone" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+
+            <!-- Expander Content -->
+
 
 
         </Grid>

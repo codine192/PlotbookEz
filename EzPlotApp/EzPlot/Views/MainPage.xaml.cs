@@ -18,13 +18,14 @@ using EzPlot.Models;
 using System.IO;
 using System.Collections.ObjectModel;
 using EzPlot.Controls;
+using System.ComponentModel;
 
 namespace EzPlot.Views
 {
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class MainPage : Page , INotifyPropertyChanged
     {
         private bool isPlacingMarker = false;
         private bool isRemovingMarker = false;
@@ -32,7 +33,8 @@ namespace EzPlot.Views
         private bool awaitingClick = false;
         public event EventHandler LeftButton_Pressed;
         public event EventHandler<MarkerEventArgs> MarkerAdded;
-     
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public ObservableCollection<Resident> UnassignedResidents { get; set; }
         public ObservableCollection<Plot> UnassignedPlots { get; set; }
         public ObservableCollection<Resident> Residents { get; set; }
@@ -43,13 +45,23 @@ namespace EzPlot.Views
         public Marker CemeteryMarker { get; set; }
         public Plot Plot { get; set; }
         
-        public PlotBook selectedPlotBook;
+        private PlotBook selectedPlotBook;
+        public PlotBook SelectedPlotBook
+        {
+            get { return selectedPlotBook; }
+            set { if (selectedPlotBook != value)
+                {
+                    selectedPlotBook = value;
+                    OnPropertyChanged(nameof(SelectedPlotBook));
+                }
+}
+        }
         public MainPage()
 
         {
             using var db = new MYDBContext();
             Markers = new ObservableCollection<Plot>(db.Plots);
-
+            selectedPlotBook = App.SelectedPlotBook;
             InitializeComponent();
             this.DataContext = this;
 
@@ -71,7 +83,7 @@ namespace EzPlot.Views
             
         }
         
-       private void ToolBox_PlacingMarkerModeActivated(object sender, EventArgs e)
+        private void ToolBox_PlacingMarkerModeActivated(object sender, EventArgs e)
         {
             isPlacingMarker = true;
             awaitingClick = true;
@@ -84,7 +96,6 @@ namespace EzPlot.Views
             isRemovingMarker = true;
             OverlayCanvas.Cursor = Cursors.Arrow;
         }
-        
         public void Canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (isPlacingMarker && awaitingClick)
@@ -139,8 +150,6 @@ namespace EzPlot.Views
                 awaitingClick = false;
             }
         }
-
-       
         public BitmapImage ConvertByteArrayToBitmapImage(byte[] imageBytes)
         {
             if (imageBytes == null || imageBytes.Length == 0) return null;
@@ -176,6 +185,12 @@ namespace EzPlot.Views
             {
                 OverlayCanvas.Children.Remove(sender as UIElement);
             }
+
+        }
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
 
         }
     }
