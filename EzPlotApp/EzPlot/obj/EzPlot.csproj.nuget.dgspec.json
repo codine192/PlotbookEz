@@ -52,6 +52,22 @@
               "target": "Package",
               "version": "[2.1.7, )"
             },
+            "GrapeCity.ActiveReports.Document": {
+              "target": "Package",
+              "version": "[16.4.1, )"
+            },
+            "GrapeCity.Documents.Imaging": {
+              "target": "Package",
+              "version": "[6.2.1, )"
+            },
+            "MahApps.Metro": {
+              "target": "Package",
+              "version": "[2.4.10, )"
+            },
+            "MahApps.Metro.IconPacks": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.21, )"

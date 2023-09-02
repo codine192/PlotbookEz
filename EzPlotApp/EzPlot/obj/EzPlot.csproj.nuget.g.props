@@ -22,7 +22,11 @@
     <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">C:\Users\Cody\.nuget\packages\entityframework\6.4.4</PkgEntityFramework>
     <PkgSystem_Data_SQLite_EF6 Condition=" '$(PkgSystem_Data_SQLite_EF6)' == '' ">C:\Users\Cody\.nuget\packages\system.data.sqlite.ef6\1.0.115.5</PkgSystem_Data_SQLite_EF6>
     <PkgOxyPlot_Wpf Condition=" '$(PkgOxyPlot_Wpf)' == '' ">C:\Users\Cody\.nuget\packages\oxyplot.wpf\2.1.2</PkgOxyPlot_Wpf>
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\Cody\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.19</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Cody\.nuget\packages\microsoft.entityframeworkcore.tools\6.0.21</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\Cody\.nuget\packages\mahapps.metro\2.4.10</PkgMahApps_Metro>
+    <PkgGrapeCity_ActiveReports_Core_DataProviders Condition=" '$(PkgGrapeCity_ActiveReports_Core_DataProviders)' == '' ">C:\Users\Cody\.nuget\packages\grapecity.activereports.core.dataproviders\2.1.4</PkgGrapeCity_ActiveReports_Core_DataProviders>
+    <PkgGrapeCity_ActiveReports_Document Condition=" '$(PkgGrapeCity_ActiveReports_Document)' == '' ">C:\Users\Cody\.nuget\packages\grapecity.activereports.document\16.4.1</PkgGrapeCity_ActiveReports_Document>
     <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\Cody\.nuget\packages\extended.wpf.toolkit\4.5.1</PkgExtended_Wpf_Toolkit>
   </PropertyGroup>
 </Project>

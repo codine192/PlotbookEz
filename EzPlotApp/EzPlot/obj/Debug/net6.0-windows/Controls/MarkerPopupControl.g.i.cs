@@ -54,7 +54,7 @@ namespace EzPlot.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EzPlot;component/controls/markerpopupcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EzPlot;V1.0.0.0;component/controls/markerpopupcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controls\MarkerPopupControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

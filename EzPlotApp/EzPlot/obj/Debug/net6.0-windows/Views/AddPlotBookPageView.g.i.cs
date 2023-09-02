@@ -54,7 +54,7 @@ namespace EzPlot.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EzPlot;component/views/addplotbookpageview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EzPlot;V1.0.0.0;component/views/addplotbookpageview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddPlotBookPageView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

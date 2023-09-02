@@ -53,6 +53,7 @@ namespace EzPlot.Views
         private BitmapImage headStone;
 
         public event PropertyChangedEventHandler? PropertyChanged;
+        public EventHandler CloseRequested;
 
         public Resident Resident { get; set; }
         public DateTime CurrentDay { get; set; }
@@ -128,6 +129,113 @@ namespace EzPlot.Views
                 }
             }
         }
+        
+        //Contact Info
+        private string _contactFirstName;
+        private string _contactLastName;
+        private string _contactEmail;
+        private string _contactPhone;
+        private string _contactAddress;
+        private string _contactCity;
+        private string _contactState;
+        private string _contactZip;
+
+        public string ContactFirstName
+        {
+            get { return _contactFirstName; }
+            set
+            {
+                if (_contactFirstName != value)
+                {
+                    _contactFirstName = value;
+                    OnPropertyChanged(nameof(ContactFirstName));
+                }
+            }
+        }
+        public string ContactLastName
+        {
+            get { return _contactLastName; }
+            set
+            {
+                if (_contactLastName != value)
+                {
+                    _contactLastName = value;
+                    OnPropertyChanged(nameof(ContactLastName));
+                }
+            }
+        }
+        public string ContactEmail
+        {
+            get { return _contactEmail; }
+            set
+            {
+                if (_contactEmail != value)
+                {
+                    _contactEmail = value;
+                    OnPropertyChanged(nameof(ContactEmail));
+                }
+            }
+        }
+        public string ContactPhone
+        {
+            get { return _contactPhone; }
+            set
+            {
+                if (_contactPhone != value)
+                {
+                    _contactPhone = value;
+                    OnPropertyChanged(nameof(ContactPhone));
+                }
+            }
+        }
+        public string ContactAddress
+        {
+            get { return _contactAddress; }
+            set
+            {
+                if (_contactAddress != value)
+                {
+                    _contactAddress = value;
+                    OnPropertyChanged(nameof(ContactAddress));
+                }
+            }
+        }
+        public string ContactCity
+        {
+            get { return _contactCity; }
+            set
+            {
+                if (_contactCity != value)
+                {
+                    _contactCity = value;
+                    OnPropertyChanged(nameof(ContactCity));
+                }
+            }
+        }
+        public string ContactState
+        {
+            get { return _contactState; }
+            set
+            {
+                if (_contactState != value)
+                {
+                    _contactState = value;
+                    OnPropertyChanged(nameof(ContactState));
+                }
+            }
+        }
+        public string ContactZip
+        {
+            get { return _contactZip; }
+            set
+            {
+                if (_contactZip != value)
+                {
+                    _contactZip = value;
+                    OnPropertyChanged(nameof(ContactZip));
+                }
+            }
+        }
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
@@ -172,6 +280,40 @@ namespace EzPlot.Views
                 uploadButton.Visibility = Visibility.Hidden;
             }
         }
+        private void OnCloseButtonClicked(object sender, RoutedEventArgs e)
+        {
+            CloseRequested?.Invoke(this, EventArgs.Empty);
+        }
+        public void OnSave_ButtonClick(object sender, RoutedEventArgs e)
+        {
+            using var context = new MYDBContext();
+            Resident.FirstName = FirstName;
+            Resident.LastName = LastName;
+            Resident.DeathDate = DOD;
+            Resident.BirthDate = DOB;
+            Resident.DateAdded = DateTime.Now;
+            Resident.Contact.FirstName = ContactFirstName;
+            Resident.Contact.LastName = ContactLastName;
+            Resident.Contact.Phone = ContactPhone;
+            Resident.Contact.City = ContactCity;
+            Resident.Contact.Address = ContactAddress;
+            Resident.Contact.State = ContactState;
+            Resident.Contact.ZipCode = ContactZip;
+            Resident.Contact.Email = ContactEmail;
 
+            if (imageData != null) { Resident.HeadStoneImageData = imageData; }
+            context.Residents.Add(Resident);
+            int isSaved = context.SaveChanges();
+            if (isSaved > 0)
+            {
+                MessageBox.Show("Record successfully added!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigationService.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else
+            {
+                MessageBox.Show("Failed to add record.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
     }
 }

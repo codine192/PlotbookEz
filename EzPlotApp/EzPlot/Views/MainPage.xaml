@@ -1,10 +1,11 @@
-﻿<Page x:Class="EzPlot.Views.MainPage"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EzPlot.Views" 
       xmlns:control="clr-namespace:EzPlot.Controls" 
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="EzPlot.Views.MainPage" 
       x:Name="Self"
       mc:Ignorable="d" 
       
@@ -12,7 +13,7 @@
 
 
     <Border BorderBrush="CornflowerBlue" BorderThickness="1">
-        <Grid DataContext="{Binding ElementName=Self }" Height="500" Width="800">
+        <Grid DataContext="{Binding ElementName=Self}" Height="500" Width="800">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200*"/>
@@ -22,17 +23,23 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                
+
             </Grid.RowDefinitions>
-            
-            <!-- Image Display Area -->
-            
-            <Canvas Name="OverlayCanvas" Background="CornflowerBlue" MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Width="800" Height="500">
+
+            <Canvas x:Name="OverlayCanvas" Background="CornflowerBlue" MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Width="800" Height="500">
+
+                <!--<Image x:Name="mapImage" Stretch="UniformToFill" Height="500" Width="800"/> -->
+                <ScrollViewer>
+                <mah:MultiFrameImage x:Name="mapImage"  StretchDirection="Both" Stretch="UniformToFill" Height="Auto" Width="Auto" mah:ScrollViewerHelper.VerticalScrollBarOnLeftSide="True"/>
+                </ScrollViewer>
+                <control:MarkerToolBoxControl x:Name="markerToolBoxControl" Grid.Column="4" Grid.Row="0"/>
+
+
+
+
+
                 
-                    <Image Name="mapImage" Stretch="UniformToFill" Height="500" Width="800"/>
-                
-                <control:MarkerToolBoxControl x:Name="markerToolBoxControl" Grid.Column="4" Grid.Row="0"></control:MarkerToolBoxControl>
-                
+
 
 
 
