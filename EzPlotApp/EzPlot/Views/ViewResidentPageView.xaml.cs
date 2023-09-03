@@ -306,7 +306,7 @@ namespace EzPlot.Views
             int isSaved = context.SaveChanges();
             if (isSaved > 0)
             {
-                MessageBox.Show("Record successfully added!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"{Resident.FullName} Added!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
             }
             else

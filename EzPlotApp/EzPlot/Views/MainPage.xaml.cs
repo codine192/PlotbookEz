@@ -193,8 +193,13 @@ namespace EzPlot.Views
 
 
         }
+
+        private void ZoomSlider_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+
+        }
     }
-        
+
     public class MarkerEventArgs : EventArgs
     {
         public Point Point { get; set; }

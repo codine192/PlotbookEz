@@ -74,8 +74,8 @@
 
                 </StackPanel>
                 <StackPanel DockPanel.Dock="Right" >
-                    <TextBox Text="{Binding FirstName}" />
-                    <TextBox Text="{Binding LastName}"/>
+                    <TextBox Text="{Binding FirstName}" CharacterCasing="Upper" />
+                    <TextBox Text="{Binding LastName}" CharacterCasing="Upper"/>
                     <DatePicker SelectedDate="{Binding DOB}"/>
                     <DatePicker SelectedDate="{Binding DOD}"/>
                     <TextBox Text="{Binding DateAdded}"/>

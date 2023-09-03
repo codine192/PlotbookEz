@@ -107,52 +107,6 @@
           }
         }
       },
-      "Gcef.Data.DataEngine/3.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Gcef.Data.ExpressionInfo": "[3.3.0, 4.0.0)",
-          "Gcef.Data.VBFunctionLib": "[3.3.0, 4.0.0)"
-        },
-        "compile": {
-          "lib/netstandard2.0/Gcef.Data.DataEngine.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Gcef.Data.DataEngine.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Gcef.Data.ExpressionInfo/3.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Gcef.Data.VBFunctionLib": "[3.3.0, 4.0.0)"
-        },
-        "compile": {
-          "lib/netstandard2.0/Gcef.Data.ExpressionInfo.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Gcef.Data.ExpressionInfo.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Gcef.Data.VBFunctionLib/3.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Gcef.Data.VBFunctionLib.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Gcef.Data.VBFunctionLib.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GMap.NET.Core/2.1.7": {
         "type": "package",
         "dependencies": {
@@ -190,208 +144,6 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
-      },
-      "GrapeCity.ActiveReports.Core.DataProviders/2.1.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.Odbc": "4.7.0",
-          "System.Data.OleDb": "4.7.1",
-          "System.Data.SqlClient": "4.8.5",
-          "System.Text.Json": "5.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.DataProviders.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.DataProviders.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "GrapeCity.ActiveReports.Core.Document/3.6.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.7.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.dll": {
-            "related": ".xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/ja/GrapeCity.ActiveReports.Core.Document.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/zh-CN/GrapeCity.ActiveReports.Core.Document.resources.dll": {
-            "locale": "zh-CN"
-          }
-        }
-      },
-      "GrapeCity.ActiveReports.Core.Document.Drawing.Gc/3.6.3": {
-        "type": "package",
-        "dependencies": {
-          "GrapeCity.ActiveReports.Core.Document": "[3.6.3, 4.0.0)",
-          "GrapeCity.Documents.Imaging": "[6.1.2, 7.0.0)"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gc.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gc.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "GrapeCity.ActiveReports.Core.Document.Drawing.Gdi/3.6.3": {
-        "type": "package",
-        "dependencies": {
-          "GrapeCity.ActiveReports.Core.Document": "[3.6.3, 4.0.0)",
-          "GrapeCity.Documents.Imaging": "[6.1.2, 7.0.0)",
-          "Microsoft.Win32.Registry": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "GrapeCity.ActiveReports.Core.Drawing.Gc/3.6.1": {
-        "type": "package",
-        "dependencies": {
-          "GrapeCity.ActiveReports.Core.Rendering": "[3.6.1, 4.0.0)",
-          "GrapeCity.Documents.Imaging": "[6.1.2, 7.0.0)",
-          "Microsoft.Win32.Registry": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Drawing.Gc.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Drawing.Gc.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "GrapeCity.ActiveReports.Core.Rdl/3.6.1": {
-        "type": "package",
-        "dependencies": {
-          "Gcef.Data.ExpressionInfo": "[3.3.0, 4.0.0)",
-          "System.Text.Json": "5.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rdl.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rdl.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "GrapeCity.ActiveReports.Core.Rendering/3.6.1": {
-        "type": "package",
-        "dependencies": {
-          "Gcef.Data.DataEngine": "[3.3.0, 4.0.0)",
-          "Gcef.Data.ExpressionInfo": "[3.3.0, 4.0.0)",
-          "GrapeCity.ActiveReports.Core.DataProviders": "[2.1.4, 3.0.0)",
-          "GrapeCity.ActiveReports.Core.Rdl": "[3.6.1, 4.0.0)",
-          "GrapeCity.DataVisualization.Chart": "0.4.136"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rendering.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rendering.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "GrapeCity.ActiveReports.Document/16.4.1": {
-        "type": "package",
-        "dependencies": {
-          "GrapeCity.ActiveReports.Core.Document": "[3.6.3, 4.0.0)",
-          "GrapeCity.ActiveReports.Core.Document.Drawing.Gc": "[3.6.3, 4.0.0)",
-          "GrapeCity.ActiveReports.Core.Document.Drawing.Gdi": "[3.6.3, 4.0.0)",
-          "GrapeCity.ActiveReports.Core.Drawing.Gc": "[3.6.1, 4.0.0)",
-          "GrapeCity.ActiveReports.Core.Rdl": "[3.6.1, 4.0.0)",
-          "GrapeCity.ActiveReports.Core.Rendering": "[3.6.1, 4.0.0)",
-          "GrapeCity.Documents.Imaging": "[6.1.2, 7.0.0)",
-          "System.Configuration.ConfigurationManager": "4.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Document.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.ActiveReports.Document.dll": {
-            "related": ".xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/zh-CN/GrapeCity.ActiveReports.Document.resources.dll": {
-            "locale": "zh-CN"
-          }
-        }
-      },
-      "GrapeCity.DataVisualization.Chart/0.4.136": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Json": "5.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.DataVisualization.Chart.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.DataVisualization.Chart.dll": {}
-        },
-        "resource": {
-          "lib/netstandard2.0/zh/GrapeCity.DataVisualization.Chart.resources.dll": {
-            "locale": "zh"
-          }
-        }
-      },
-      "GrapeCity.Documents.Imaging/6.2.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.4.0",
-          "System.Memory": "4.5.0",
-          "System.Numerics.Vectors": "4.4.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/GrapeCity.Documents.Imaging.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/GrapeCity.Documents.Imaging.dll": {
-            "related": ".xml"
-          }
-        },
-        "resource": {
-          "lib/netstandard2.0/ja/GrapeCity.Documents.Imaging.resources.dll": {
-            "locale": "ja"
-          }
-        }
       },
       "Humanizer.Core/2.8.26": {
         "type": "package",
@@ -1183,7 +935,7 @@
           }
         }
       },
-      "Microsoft.NETCore.Platforms/3.1.4": {
+      "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -1199,7 +951,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
+          "ref/netstandard2.0/_._": {
             "related": ".xml"
           }
         },
@@ -1404,15 +1156,6 @@
           }
         }
       },
-      "System.Buffers/4.4.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
       "System.CodeDom/4.7.0": {
         "type": "package",
         "compile": {
@@ -1475,66 +1218,7 @@
           }
         }
       },
-      "System.Data.Odbc/4.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Data.Odbc.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Data.Odbc.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/freebsd/lib/netcoreapp2.0/System.Data.Odbc.dll": {
-            "assetType": "runtime",
-            "rid": "freebsd"
-          },
-          "runtimes/linux/lib/netcoreapp2.0/System.Data.Odbc.dll": {
-            "assetType": "runtime",
-            "rid": "linux"
-          },
-          "runtimes/osx/lib/netcoreapp2.0/System.Data.Odbc.dll": {
-            "assetType": "runtime",
-            "rid": "osx"
-          },
-          "runtimes/win/lib/netcoreapp2.0/System.Data.Odbc.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Data.OleDb/4.7.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.Registry": "4.7.0",
-          "System.Configuration.ConfigurationManager": "4.7.0",
-          "System.Diagnostics.PerformanceCounter": "4.7.0",
-          "System.Security.Principal.Windows": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Data.OleDb.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Data.OleDb.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Data.OleDb.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Data.SqlClient/4.8.5": {
+      "System.Data.SqlClient/4.8.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
@@ -1606,39 +1290,14 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Diagnostics.PerformanceCounter/4.7.0": {
+      "System.Drawing.Common/4.7.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.Win32.Registry": "4.7.0",
-          "System.Configuration.ConfigurationManager": "4.7.0",
-          "System.Security.Principal.Windows": "4.7.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Drawing.Common/4.7.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.4",
           "Microsoft.Win32.SystemEvents": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/System.Drawing.Common.dll": {
+          "ref/netcoreapp3.0/_._": {
             "related": ".xml"
           }
         },
@@ -1671,24 +1330,6 @@
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.Memory/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Numerics.Vectors/4.4.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.Runtime.Caching/4.7.0": {
@@ -2051,60 +1692,6 @@
         "tools/install.ps1"
       ]
     },
-    "Gcef.Data.DataEngine/3.3.0": {
-      "sha512": "7b4yWF8cNU9M67MliqfhbpUbIGvAjHTds+umTRuUNZaTBox4NcqPz7HGRPI9sGBTbyKaDWOV6IG+nkr2XKMpRg==",
-      "type": "package",
-      "path": "gcef.data.dataengine/3.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gcef.data.dataengine.3.3.0.nupkg.sha512",
-        "gcef.data.dataengine.nuspec",
-        "lib/net462/Gcef.Data.DataEngine.dll",
-        "lib/net462/Gcef.Data.DataEngine.xml",
-        "lib/netstandard2.0/Gcef.Data.DataEngine.dll",
-        "lib/netstandard2.0/Gcef.Data.DataEngine.xml",
-        "license.txt",
-        "packageIcon.png",
-        "readme.md"
-      ]
-    },
-    "Gcef.Data.ExpressionInfo/3.3.0": {
-      "sha512": "9PByUw1JEJWFhnEuT6HqUQbfNUFqFyeNhBqIvJZLkSreiTmIynQpNqm9b6pM/uciFPaGcvvVs/NdpuhKQ52CCQ==",
-      "type": "package",
-      "path": "gcef.data.expressioninfo/3.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gcef.data.expressioninfo.3.3.0.nupkg.sha512",
-        "gcef.data.expressioninfo.nuspec",
-        "lib/net462/Gcef.Data.ExpressionInfo.dll",
-        "lib/net462/Gcef.Data.ExpressionInfo.xml",
-        "lib/netstandard2.0/Gcef.Data.ExpressionInfo.dll",
-        "lib/netstandard2.0/Gcef.Data.ExpressionInfo.xml",
-        "license.txt",
-        "packageIcon.png",
-        "readme.md"
-      ]
-    },
-    "Gcef.Data.VBFunctionLib/3.3.0": {
-      "sha512": "SilkmAHlidHgM5qBNoLhZNIOGiP+G96Mi/hRwbdmcq7FhlyFPuk1NrSn9uoTGaplGK3bchuNITkXa3HY+4Z3NQ==",
-      "type": "package",
-      "path": "gcef.data.vbfunctionlib/3.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gcef.data.vbfunctionlib.3.3.0.nupkg.sha512",
-        "gcef.data.vbfunctionlib.nuspec",
-        "lib/net462/Gcef.Data.VBFunctionLib.dll",
-        "lib/net462/Gcef.Data.VBFunctionLib.xml",
-        "lib/netstandard2.0/Gcef.Data.VBFunctionLib.dll",
-        "lib/netstandard2.0/Gcef.Data.VBFunctionLib.xml",
-        "license.txt",
-        "packageIcon.png",
-        "readme.md"
-      ]
-    },
     "GMap.NET.Core/2.1.7": {
       "sha512": "exjxXgx9pNR2eAihmvTzjEB7YWdHvTXx5O0T3ABiewPXIWcTV3MMGdjrV7NH0IOKeViUWeI4lQvqVziW6T013w==",
       "type": "package",
@@ -2157,197 +1744,6 @@
         "lib/netcoreapp3.0/GMap.NET.WindowsPresentation.runtimeconfig.json",
         "lib/netcoreapp3.1/GMap.NET.WindowsPresentation.dll",
         "lib/netcoreapp3.1/GMap.NET.WindowsPresentation.runtimeconfig.json"
-      ]
-    },
-    "GrapeCity.ActiveReports.Core.DataProviders/2.1.4": {
-      "sha512": "vEMFq8Jy8MGQyRLUl2NhAYIL0kOLR/S962Qko7WqNqacg1Z5wq+jwBTlQGXqpIe90am6k4UXJ6Fq0e46VLgzzw==",
-      "type": "package",
-      "path": "grapecity.activereports.core.dataproviders/2.1.4",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.core.dataproviders.2.1.4.nupkg.sha512",
-        "grapecity.activereports.core.dataproviders.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Core.DataProviders.dll",
-        "lib/net462/GrapeCity.ActiveReports.Core.DataProviders.xml",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.DataProviders.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.DataProviders.xml",
-        "license.txt",
-        "readme.md",
-        "tools/VisualStudioToolsManifest.xml"
-      ]
-    },
-    "GrapeCity.ActiveReports.Core.Document/3.6.3": {
-      "sha512": "sZO8Na4WuUEpoPJ8Ajc1JLye6GB/G7kedC4iXKdJguuM1LAUwHPZ+JaBFL2rHRuwBgK6SHWa/kI3yAA/HSmmMg==",
-      "type": "package",
-      "path": "grapecity.activereports.core.document/3.6.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.core.document.3.6.3.nupkg.sha512",
-        "grapecity.activereports.core.document.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Core.Document.dll",
-        "lib/net462/GrapeCity.ActiveReports.Core.Document.xml",
-        "lib/net462/ja/GrapeCity.ActiveReports.Core.Document.resources.dll",
-        "lib/net462/zh-CN/GrapeCity.ActiveReports.Core.Document.resources.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.xml",
-        "lib/netstandard2.0/ja/GrapeCity.ActiveReports.Core.Document.resources.dll",
-        "lib/netstandard2.0/zh-CN/GrapeCity.ActiveReports.Core.Document.resources.dll",
-        "license.txt",
-        "readme.md"
-      ]
-    },
-    "GrapeCity.ActiveReports.Core.Document.Drawing.Gc/3.6.3": {
-      "sha512": "ZkOA5tMeCKt86+MYisv/yJq5z4wtU0CQp/Pt2cxqLn71HrokEMyXc5HoFrhG1Tpp2ivyYySOGZPio8qhzZQoBw==",
-      "type": "package",
-      "path": "grapecity.activereports.core.document.drawing.gc/3.6.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.core.document.drawing.gc.3.6.3.nupkg.sha512",
-        "grapecity.activereports.core.document.drawing.gc.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Core.Document.Drawing.Gc.dll",
-        "lib/net462/GrapeCity.ActiveReports.Core.Document.Drawing.Gc.xml",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gc.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gc.xml",
-        "license.txt",
-        "readme.md"
-      ]
-    },
-    "GrapeCity.ActiveReports.Core.Document.Drawing.Gdi/3.6.3": {
-      "sha512": "8X92sB2I8mja2u0zNaf44po6RoC81ZOAIftYHyNb6xKpCWurp7BUH6kozu59nc3C+l8ejW7WVHagcUteTOJbow==",
-      "type": "package",
-      "path": "grapecity.activereports.core.document.drawing.gdi/3.6.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.core.document.drawing.gdi.3.6.3.nupkg.sha512",
-        "grapecity.activereports.core.document.drawing.gdi.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.dll",
-        "lib/net462/GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.xml",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Document.Drawing.Gdi.xml",
-        "license.txt",
-        "readme.md"
-      ]
-    },
-    "GrapeCity.ActiveReports.Core.Drawing.Gc/3.6.1": {
-      "sha512": "Ex4CE4ohpNBV9TQ9bPa6acbHvkJ8p0vK1iEuhK2Dxf4id5Njl63hpsDZDFHpWBG2wukHl/SD0kn5b1cl7h15mg==",
-      "type": "package",
-      "path": "grapecity.activereports.core.drawing.gc/3.6.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.core.drawing.gc.3.6.1.nupkg.sha512",
-        "grapecity.activereports.core.drawing.gc.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Core.Drawing.Gc.dll",
-        "lib/net462/GrapeCity.ActiveReports.Core.Drawing.Gc.xml",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Drawing.Gc.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Drawing.Gc.xml",
-        "license.txt",
-        "readme.md"
-      ]
-    },
-    "GrapeCity.ActiveReports.Core.Rdl/3.6.1": {
-      "sha512": "7b9ePkzpW9/dCRbUaZUaHdfSkiiJTnOPP036O12j4pdxXip9VCNOKFlExuV1HgqtmHcDVmD2HLuyESOukkWCjQ==",
-      "type": "package",
-      "path": "grapecity.activereports.core.rdl/3.6.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.core.rdl.3.6.1.nupkg.sha512",
-        "grapecity.activereports.core.rdl.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Core.Rdl.dll",
-        "lib/net462/GrapeCity.ActiveReports.Core.Rdl.xml",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rdl.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rdl.xml",
-        "license.txt",
-        "readme.md"
-      ]
-    },
-    "GrapeCity.ActiveReports.Core.Rendering/3.6.1": {
-      "sha512": "p1/KIRHg5/T47REsqw6s0TPTp24u/0oiWFcZ1x8Uwi7Lrz4U47s2ywQQWJKGMPy53sJjPB5gZcs7BM6C7YmtrQ==",
-      "type": "package",
-      "path": "grapecity.activereports.core.rendering/3.6.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.core.rendering.3.6.1.nupkg.sha512",
-        "grapecity.activereports.core.rendering.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Core.Rendering.dll",
-        "lib/net462/GrapeCity.ActiveReports.Core.Rendering.xml",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rendering.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Core.Rendering.xml",
-        "license.txt",
-        "readme.md"
-      ]
-    },
-    "GrapeCity.ActiveReports.Document/16.4.1": {
-      "sha512": "MuB/7NA9vdhHwB7OBYOuT0nyjJDFCq3pogSnSlOTmGSoRlpIgnP+E9o0Ti+v2hmW7zEd0uZusNyUKMmqO8cx4w==",
-      "type": "package",
-      "path": "grapecity.activereports.document/16.4.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "grapecity.activereports.document.16.4.1.nupkg.sha512",
-        "grapecity.activereports.document.nuspec",
-        "icon.png",
-        "lib/net462/GrapeCity.ActiveReports.Document.dll",
-        "lib/net462/GrapeCity.ActiveReports.Document.xml",
-        "lib/net462/zh-CN/GrapeCity.ActiveReports.Document.resources.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Document.dll",
-        "lib/netstandard2.0/GrapeCity.ActiveReports.Document.xml",
-        "lib/netstandard2.0/zh-CN/GrapeCity.ActiveReports.Document.resources.dll",
-        "license.txt",
-        "readme.md",
-        "tools/VisualStudioToolsManifest.xml"
-      ]
-    },
-    "GrapeCity.DataVisualization.Chart/0.4.136": {
-      "sha512": "693Wc4POebJgrl2iXI23boAVpYH8VFecDuEzcelBGDF0e6HCMjIkVbDdysmLv8UygXVJHXqSpvhvcYYs7rhM8w==",
-      "type": "package",
-      "path": "grapecity.datavisualization.chart/0.4.136",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "gclogo_nuget.png",
-        "grapecity.datavisualization.chart.0.4.136.nupkg.sha512",
-        "grapecity.datavisualization.chart.nuspec",
-        "lib/net461/GrapeCity.DataVisualization.Chart.dll",
-        "lib/net461/zh/GrapeCity.DataVisualization.Chart.resources.dll",
-        "lib/netstandard2.0/GrapeCity.DataVisualization.Chart.dll",
-        "lib/netstandard2.0/zh/GrapeCity.DataVisualization.Chart.resources.dll"
-      ]
-    },
-    "GrapeCity.Documents.Imaging/6.2.1": {
-      "sha512": "AaJhraJlUvGF6U1/zpayrpBdK9+mt3z1MiWYcDx8NUe/hgqPq9M5hYBrisNwcFzxlbsjWPn5YN+cgmzWz5mMWg==",
-      "type": "package",
-      "path": "grapecity.documents.imaging/6.2.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "3rd-party-software.txt",
-        "LICENSE.txt",
-        "README.md",
-        "grapecity.documents.imaging.6.2.1.nupkg.sha512",
-        "grapecity.documents.imaging.nuspec",
-        "icon.png",
-        "lib/net461/GrapeCity.Documents.Imaging.dll",
-        "lib/net461/GrapeCity.Documents.Imaging.xml",
-        "lib/net461/ja/GrapeCity.Documents.Imaging.resources.dll",
-        "lib/netstandard2.0/GrapeCity.Documents.Imaging.dll",
-        "lib/netstandard2.0/GrapeCity.Documents.Imaging.xml",
-        "lib/netstandard2.0/ja/GrapeCity.Documents.Imaging.resources.dll"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -4004,18 +3400,17 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.1.4": {
-      "sha512": "9/y05/CuxE+j184Nr4KihhB9KcUkvGojmD4JV4Vt/mHhVZR+eOCD5WCM+CXye9K0OFMsaPXbN+IcaIpjgBGZmg==",
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.1.4",
+      "path": "microsoft.netcore.platforms/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.1.4.nupkg.sha512",
+        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -4324,31 +3719,6 @@
         "stub.system.data.sqlite.core.netstandard.nuspec"
       ]
     },
-    "System.Buffers/4.4.0": {
-      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
-      "type": "package",
-      "path": "system.buffers/4.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.1/System.Buffers.dll",
-        "lib/netstandard1.1/System.Buffers.xml",
-        "lib/netstandard2.0/System.Buffers.dll",
-        "lib/netstandard2.0/System.Buffers.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.1/System.Buffers.dll",
-        "ref/netstandard1.1/System.Buffers.xml",
-        "ref/netstandard2.0/System.Buffers.dll",
-        "ref/netstandard2.0/System.Buffers.xml",
-        "system.buffers.4.4.0.nupkg.sha512",
-        "system.buffers.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.CodeDom/4.7.0": {
       "sha512": "Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
       "type": "package",
@@ -4507,73 +3877,10 @@
         "version.txt"
       ]
     },
-    "System.Data.Odbc/4.7.0": {
-      "sha512": "unlxM2E513eogjihvQ4cGuI+wa5QGH/C4u5Rf34A8alDArtmNwvY1FrnoHaLDdR/pOIlj+mxxpOfI1zTuQ4erA==",
+    "System.Data.SqlClient/4.8.3": {
+      "sha512": "yERfVLXAY0QbylAgaGLByYN0hFxX28aeEQ0hUgJO+Ntn1AfmWl5HHUoYJA0Yl9HhIUUJHVaS/Sw/RLZr5aaC+A==",
       "type": "package",
-      "path": "system.data.odbc/4.7.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Data.Odbc.dll",
-        "lib/net461/System.Data.Odbc.xml",
-        "lib/netstandard2.0/System.Data.Odbc.dll",
-        "lib/netstandard2.0/System.Data.Odbc.xml",
-        "ref/net461/System.Data.Odbc.dll",
-        "ref/net461/System.Data.Odbc.xml",
-        "ref/net472/System.Data.Odbc.dll",
-        "ref/net472/System.Data.Odbc.xml",
-        "ref/netstandard2.0/System.Data.Odbc.dll",
-        "ref/netstandard2.0/System.Data.Odbc.xml",
-        "runtimes/freebsd/lib/netcoreapp2.0/System.Data.Odbc.dll",
-        "runtimes/freebsd/lib/netcoreapp2.0/System.Data.Odbc.xml",
-        "runtimes/linux/lib/netcoreapp2.0/System.Data.Odbc.dll",
-        "runtimes/linux/lib/netcoreapp2.0/System.Data.Odbc.xml",
-        "runtimes/osx/lib/netcoreapp2.0/System.Data.Odbc.dll",
-        "runtimes/osx/lib/netcoreapp2.0/System.Data.Odbc.xml",
-        "runtimes/win/lib/net461/System.Data.Odbc.dll",
-        "runtimes/win/lib/net461/System.Data.Odbc.xml",
-        "runtimes/win/lib/netcoreapp2.0/System.Data.Odbc.dll",
-        "runtimes/win/lib/netcoreapp2.0/System.Data.Odbc.xml",
-        "system.data.odbc.4.7.0.nupkg.sha512",
-        "system.data.odbc.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Data.OleDb/4.7.1": {
-      "sha512": "q1RDNGwHZYPu5qqOSr3W3K4YFW0LTFJA85sWNppfVQQW/Nhb0oieJJfoKd5eUPZ7km7Mr3dAw17DaTUE5FPH6w==",
-      "type": "package",
-      "path": "system.data.oledb/4.7.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Data.OleDb.dll",
-        "lib/net461/System.Data.OleDb.xml",
-        "lib/netstandard2.0/System.Data.OleDb.dll",
-        "lib/netstandard2.0/System.Data.OleDb.xml",
-        "ref/net461/System.Data.OleDb.dll",
-        "ref/net461/System.Data.OleDb.xml",
-        "ref/netstandard2.0/System.Data.OleDb.dll",
-        "ref/netstandard2.0/System.Data.OleDb.xml",
-        "runtimes/win/lib/net461/System.Data.OleDb.dll",
-        "runtimes/win/lib/net461/System.Data.OleDb.xml",
-        "runtimes/win/lib/netstandard2.0/System.Data.OleDb.dll",
-        "runtimes/win/lib/netstandard2.0/System.Data.OleDb.xml",
-        "system.data.oledb.4.7.1.nupkg.sha512",
-        "system.data.oledb.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Data.SqlClient/4.8.5": {
-      "sha512": "fRqxut4lrndPHrXD+ht1XRmCL3obuKldm4XjCRYS9p5f7FSR7shBxAwTkDrpFMsHC9BhNgjjmUtiIjvehn5zkg==",
-      "type": "package",
-      "path": "system.data.sqlclient/4.8.5",
+      "path": "system.data.sqlclient/4.8.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4650,7 +3957,7 @@
         "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.xml",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.dll",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.xml",
-        "system.data.sqlclient.4.8.5.nupkg.sha512",
+        "system.data.sqlclient.4.8.3.nupkg.sha512",
         "system.data.sqlclient.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -4740,53 +4047,13 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Diagnostics.PerformanceCounter/4.7.0": {
-      "sha512": "kE9szT4i3TYT9bDE/BPfzg9/BL6enMiZlcUmnUEBrhRtxWvurKoa8qhXkLTRhrxMzBqaDleWlRfIPE02tulU+w==",
+    "System.Drawing.Common/4.7.0": {
+      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
       "type": "package",
-      "path": "system.diagnostics.performancecounter/4.7.0",
+      "path": "system.drawing.common/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Diagnostics.PerformanceCounter.dll",
-        "lib/net461/System.Diagnostics.PerformanceCounter.xml",
-        "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll",
-        "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.Diagnostics.PerformanceCounter.dll",
-        "ref/net461/System.Diagnostics.PerformanceCounter.xml",
-        "ref/net472/System.Diagnostics.PerformanceCounter.dll",
-        "ref/net472/System.Diagnostics.PerformanceCounter.xml",
-        "ref/netstandard2.0/System.Diagnostics.PerformanceCounter.dll",
-        "ref/netstandard2.0/System.Diagnostics.PerformanceCounter.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll",
-        "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.xml",
-        "system.diagnostics.performancecounter.4.7.0.nupkg.sha512",
-        "system.diagnostics.performancecounter.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Drawing.Common/4.7.2": {
-      "sha512": "I2y4KBK3VCvU/WqE2xv7NjQ67maXHttkFSHYKgU2evrG9Yqh0oFjfORXt5hZTk+BVjdyFo2h0/YQZsca33BGmg==",
-      "type": "package",
-      "path": "system.drawing.common/4.7.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -4813,7 +4080,7 @@
         "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "system.drawing.common.4.7.2.nupkg.sha512",
+        "system.drawing.common.4.7.0.nupkg.sha512",
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -4834,88 +4101,6 @@
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
         "system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
-      ]
-    },
-    "System.Memory/4.5.0": {
-      "sha512": "m0psCSpUxTGfvwyO0i03ajXVhgBqyXlibXz0Mo1dtKGjaHrXFLnuQ8rNBTmWRqbfRjr4eC6Wah4X5FfuFDu5og==",
-      "type": "package",
-      "path": "system.memory/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "lib/uap10.0.16300/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/netstandard1.1/System.Memory.dll",
-        "ref/netstandard1.1/System.Memory.xml",
-        "ref/netstandard2.0/System.Memory.dll",
-        "ref/netstandard2.0/System.Memory.xml",
-        "ref/uap10.0.16300/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.memory.4.5.0.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Numerics.Vectors/4.4.0": {
-      "sha512": "UiLzLW+Lw6HLed1Hcg+8jSRttrbuXv7DANVj0DkL9g6EnnzbL75EB7EWsw5uRbhxd/4YdG8li5XizGWepmG3PQ==",
-      "type": "package",
-      "path": "system.numerics.vectors/4.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Numerics.Vectors.dll",
-        "lib/net46/System.Numerics.Vectors.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.Numerics.Vectors.dll",
-        "lib/netstandard1.0/System.Numerics.Vectors.xml",
-        "lib/netstandard2.0/System.Numerics.Vectors.dll",
-        "lib/netstandard2.0/System.Numerics.Vectors.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Numerics.Vectors.dll",
-        "ref/net46/System.Numerics.Vectors.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.0/System.Numerics.Vectors.dll",
-        "ref/netstandard1.0/System.Numerics.Vectors.xml",
-        "ref/netstandard2.0/System.Numerics.Vectors.dll",
-        "ref/netstandard2.0/System.Numerics.Vectors.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.numerics.vectors.4.4.0.nupkg.sha512",
-        "system.numerics.vectors.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "System.Runtime.Caching/4.7.0": {
@@ -5362,8 +4547,6 @@
     "net6.0-windows7.0": [
       "Extended.Wpf.Toolkit >= 4.5.1",
       "GMap.NET.WinPresentation >= 2.1.7",
-      "GrapeCity.ActiveReports.Document >= 16.4.1",
-      "GrapeCity.Documents.Imaging >= 6.2.1",
       "MahApps.Metro >= 2.4.10",
       "MahApps.Metro.IconPacks >= 4.11.0",
       "Microsoft.EntityFrameworkCore >= 6.0.21",
@@ -5427,14 +4610,6 @@
           "GMap.NET.WinPresentation": {
             "target": "Package",
             "version": "[2.1.7, )"
-          },
-          "GrapeCity.ActiveReports.Document": {
-            "target": "Package",
-            "version": "[16.4.1, )"
-          },
-          "GrapeCity.Documents.Imaging": {
-            "target": "Package",
-            "version": "[6.2.1, )"
           },
           "MahApps.Metro": {
             "target": "Package",

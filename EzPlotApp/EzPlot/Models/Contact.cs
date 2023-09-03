@@ -9,8 +9,32 @@ namespace EzPlot.Models
     public class Contact
     {
         public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return FirstName;
+            }
+
+            set
+            {
+                FirstName = value.Replace((value.Substring(0,1)),value.Substring(0,1).ToUpper());
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return LastName;
+            }
+
+            set
+            {
+                LastName = value.Replace((value.Substring(0, 1)), value.Substring(0, 1).ToUpper());
+            }
+        }
+
         public string? FullName => $"{FirstName} {LastName}";
         public string? Email { get; set; }
         public string? Phone { get; set; }

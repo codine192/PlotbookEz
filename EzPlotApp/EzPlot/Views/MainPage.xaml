@@ -13,38 +13,19 @@
 
 
     <Border BorderBrush="CornflowerBlue" BorderThickness="1">
-        <Grid DataContext="{Binding ElementName=Self}" Height="500" Width="800">
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200*"/>
-                <ColumnDefinition Width="200*"/>
-                <ColumnDefinition Width="200*"/>
-                <ColumnDefinition Width="200*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-
-            </Grid.RowDefinitions>
-
-            <Canvas x:Name="OverlayCanvas" Background="CornflowerBlue" MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Width="800" Height="500">
-
-                <!--<Image x:Name="mapImage" Stretch="UniformToFill" Height="500" Width="800"/> -->
-                <ScrollViewer>
-                <mah:MultiFrameImage x:Name="mapImage"  StretchDirection="Both" Stretch="UniformToFill" Height="Auto" Width="Auto" mah:ScrollViewerHelper.VerticalScrollBarOnLeftSide="True"/>
-                </ScrollViewer>
-                <control:MarkerToolBoxControl x:Name="markerToolBoxControl" Grid.Column="4" Grid.Row="0"/>
-
-
-
-
-
+        <Grid DataContext="{Binding ElementName=Self}" Height="550" Width="850">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <Canvas x:Name="OverlayCanvas"  MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Background="Azure" MaxWidth="2000" MaxHeight="2000" MinHeight="500" MinWidth="800">
+                    <Canvas.LayoutTransform>
+                        <ScaleTransform ScaleX="{Binding ElementName=ZoomSlider, Path=Value}" 
+                                    ScaleY="{Binding ElementName=ZoomSlider, Path=Value}"/>
+                    </Canvas.LayoutTransform>
+                <Image x:Name="mapImage" Stretch="UniformToFill" MinHeight="550" MinWidth="850"/> 
                 
-
-
-
-
-
             </Canvas>
+            </ScrollViewer>
+            <Slider Name="ZoomSlider" Minimum="1" Maximum="10" Value="1" Orientation="Vertical" Height="200" Width="20" HorizontalAlignment="Left" mah:SliderHelper.ThumbFillBrush="#FF0AABE2"/>
+            <control:MarkerToolBoxControl x:Name="markerToolBoxControl" VerticalAlignment="Top" />
         </Grid>
     </Border>
 
