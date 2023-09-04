@@ -7,6 +7,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\ToolbarControls\CemeteryPlottingToolbarControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\ToolbarControls\CemeteryRowMakerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\ToolbarControls\CreateCemeteryGridButtonControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\MarkerPopupControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -51,6 +60,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\ToolbarControls\CemeteryPlottingToolbarControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ToolbarControls\CemeteryRowMakerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ToolbarControls\CreateCemeteryGridButtonControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\MarkerPopupControl.xaml">
       <SubType>Designer</SubType>
     </Page>

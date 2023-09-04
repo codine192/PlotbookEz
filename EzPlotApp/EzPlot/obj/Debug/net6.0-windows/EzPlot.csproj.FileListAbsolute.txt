@@ -162,3 +162,7 @@ C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-wind
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.dll
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
+C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\Controls\CemeteryRowMakerControl.g.cs
+C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\Controls\CreateCemeteryGridButtonControl.g.cs
+C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\Controls\CemeteryRowMakerControl.baml
+C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\obj\Debug\net6.0-windows\Controls\CreateCemeteryGridButtonControl.baml
