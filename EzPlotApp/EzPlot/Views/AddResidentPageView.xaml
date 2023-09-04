@@ -88,7 +88,7 @@
                             </StackPanel>
                         </DockPanel>
                     </Expander>
-                    <Expander Header="Contact" ExpandDirection="Down">
+                    <Expander Header="Contact" ExpandDirection="Down" IsExpanded="True">
 
                         <DockPanel>
                             <StackPanel DockPanel.Dock="Left" >

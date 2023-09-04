@@ -9,7 +9,7 @@
         FontSize="14"
         
         mc:Ignorable="d"
-        Title="EzPlot" Height="600" Width="1150">
+        Title="EzPlot" MinHeight="600" MinWidth="1150">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Template">
@@ -78,7 +78,7 @@
 
     </Window.Resources>
     <Border BorderBrush="CornflowerBlue" BorderThickness="2">
-        <Grid Width="Auto" Height="Auto" Background="AliceBlue">
+        <Grid Width="Auto" Height="Auto" Background="#FF0C757D">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="100*"/>

@@ -10,13 +10,53 @@
       mc:Ignorable="d" 
       
       Title="MainPage">
+    <Page.Resources>
+        <Style TargetType="ScrollViewer">
+            <Setter           
+        Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollViewer">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <ScrollContentPresenter Grid.Column="0" Grid.Row="0" Content="{TemplateBinding Content}" 
+                                                    Margin="{TemplateBinding Padding}"/>
+                            <ScrollBar x:Name="PART_VerticalScrollBar" 
+                                       Grid.Column="1" Grid.Row="0" 
+                                       Orientation="Vertical" 
+                                       Maximum="{TemplateBinding ScrollableHeight}" 
+                                       ViewportSize="{TemplateBinding ViewportHeight}" 
+                                       Value="{TemplateBinding VerticalOffset}" 
+                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                       Height="300"
+                                      />
+                            <ScrollBar x:Name="PART_HorizontalScrollBar" 
+                                       Grid.Column="0" Grid.Row="1" 
+                                       Orientation="Horizontal" 
+                                       Maximum="{TemplateBinding ScrollableWidth}" 
+                                       ViewportSize="{TemplateBinding ViewportWidth}" 
+                                       Value="{TemplateBinding HorizontalOffset}" 
+                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                       Width="300"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter> 
+        </Style>
+    </Page.Resources>
 
-
-    <Border BorderBrush="CornflowerBlue" BorderThickness="1">
+    <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="1">
         <Grid DataContext="{Binding ElementName=Self}" Height="Auto" Width="Auto" Background="#FF0C757D">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="Both" Margin="5">
-                <Grid MaxHeight="525" MaxWidth="825">
-                <Canvas x:Name="OverlayCanvas"  MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Background="Azure" MaxWidth="2000" MaxHeight="2000" MinHeight="550" MinWidth="850" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+            <Viewbox >
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="Both" MaxWidth="850" MaxHeight="550" Margin="10">
+                <Grid >
+                <Canvas x:Name="OverlayCanvas"  MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Background="Azure"  MinHeight="550" MinWidth="850" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
                     <Canvas.Effect>
                         <DropShadowEffect BlurRadius="35"/>
                     </Canvas.Effect>
@@ -27,17 +67,18 @@
                     <Image x:Name="mapImage" Stretch="UniformToFill" MinHeight="550" MinWidth="850"/>
 
                 </Canvas>
-                    <Slider x:Name="ZoomSlider" Minimum=".9" Maximum="10" Value=".5" Orientation="Vertical" Height="260" Width="20" HorizontalAlignment="Left" mah:SliderHelper.ThumbFillBrush="#FF0AABE2" Background="{x:Null}" Foreground="#FF279ED0" Margin="5">
-                        <Slider.Effect>
-                            <BlurEffect/>
-                        </Slider.Effect>
-                    </Slider>
-                </Grid>
+                        
+                    </Grid>
             </ScrollViewer>
-            
+            </Viewbox>
+            <Slider x:Name="ZoomSlider" Minimum=".9" Maximum="20" Value=".5" Orientation="Vertical" Height="150" Width="20" HorizontalAlignment="Left"  Background="{x:Null}" Foreground="#FF279ED0" Margin="3">
+                <Slider.Effect>
+                    <BlurEffect/>
+                </Slider.Effect>
+            </Slider>
             <control:MarkerToolBoxControl x:Name="markerToolBoxControl" VerticalAlignment="Top" />
 
-
+            
         </Grid>
     </Border>
 
