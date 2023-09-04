@@ -35,6 +35,7 @@ namespace EzPlot.Views
             DOB = resident.BirthDate;
             DOD = resident.DeathDate;
             DateAdded = resident.DateAdded;
+            FullName = resident.FullName;
             if (resident.HeadStoneImageData != null) { headStone=Resident.HeadStoneImage;headStoneContainer.Visibility = Visibility.Visible; }
             else
             {
@@ -51,7 +52,7 @@ namespace EzPlot.Views
         private DateTime dod;
         private DateTime dateAdded;
         private BitmapImage headStone;
-
+        private string fullName;
         public event PropertyChangedEventHandler? PropertyChanged;
         public EventHandler CloseRequested;
 
@@ -114,6 +115,19 @@ namespace EzPlot.Views
                 {
                     lastName = value;
                     OnPropertyChanged(nameof(LastName));
+                }
+            }
+        }
+
+        public string FullName
+        {
+            get { return fullName; }
+            set
+            {
+                if (fullName != value)
+                {
+                    fullName = value;
+                    OnPropertyChanged(nameof(FullName));
                 }
             }
         }

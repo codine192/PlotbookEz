@@ -14,7 +14,7 @@
 
     <Border BorderBrush="CornflowerBlue" BorderThickness="1">
         <Grid DataContext="{Binding ElementName=Self}" Height="Auto" Width="Auto" Background="#FF0C757D">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="Both" controlzex:KeyboardNavigationEx.AlwaysShowFocusVisual="True" Margin="5">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="Both" Margin="5">
                 <Grid MaxHeight="525" MaxWidth="825">
                 <Canvas x:Name="OverlayCanvas"  MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Background="Azure" MaxWidth="2000" MaxHeight="2000" MinHeight="550" MinWidth="850" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
                     <Canvas.Effect>
