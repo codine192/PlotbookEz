@@ -3,6 +3,7 @@ FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\App.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\MarkerControl.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\MarkerPopupControl.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\MarkerToolBoxControl.xaml;;
+FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\ToolbarControls\CemeteryPlottingToolbarControl.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\MainWindow.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\old\AddResidentWindow.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\old\LoadPlotBookWindow.xaml;;
@@ -14,6 +15,7 @@ FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Views\MarkerToolBoxV
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Views\ViewPlotListPageView.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Views\ViewResidentListPageView.xaml;;
 FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Views\ViewResidentPageView.xaml;;
-FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\CemeteryRowMakerControl.xaml;;
-FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\CreateCemeteryGridButtonControl.xaml;;
+FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\ToolbarControls\GridMakerButtonControl.xaml;;
+FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\ToolbarControls\GridMakerControl.xaml;;
+FC:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\Controls\ToolbarControls\GridMakerPopupControl.xaml;;
 

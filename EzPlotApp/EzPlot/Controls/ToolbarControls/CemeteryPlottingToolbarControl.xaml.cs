@@ -19,10 +19,13 @@ namespace EzPlot.Controls.ToolbarControls
     /// Interaction logic for CemeteryPlottingToolbarControl.xaml
     /// </summary>
     public partial class CemeteryPlottingToolbarControl : UserControl
+
     {
+        
         public CemeteryPlottingToolbarControl()
         {
             InitializeComponent();
+            
         }
     }
 }
