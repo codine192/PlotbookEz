@@ -9,7 +9,7 @@
         FontSize="14"
         
         mc:Ignorable="d"
-        Title="EzPlot" MinHeight="600" MinWidth="1150">
+        Title="EzPlot" MinHeight="750" MinWidth="1150">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Template">

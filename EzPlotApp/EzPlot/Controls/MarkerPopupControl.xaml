@@ -1,43 +1,109 @@
-﻿<UserControl x:Class="EzPlot.Controls.MarkerPopupControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:EzPlot.Controls" d:DataContext="{d:DesignInstance local:MarkerPopupControl}"
-             mc:Ignorable="d" 
-             DataContext="{Binding RelativeSource={RelativeSource Self}}"
-             d:DesignHeight="250" d:DesignWidth="250">
-    
-    <Border Grid.ColumnSpan="4" Grid.RowSpan="6" BorderBrush="CornflowerBlue" BorderThickness="3">
-        <Grid Background="AliceBlue" Width="225" Height="250">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="20*"/>
-            <ColumnDefinition Width="20*"/>
+﻿<UserControl
+    x:Class="EzPlot.Controls.MarkerPopupControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EzPlot.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignInstance local:MarkerPopupControl}"
+    d:DesignHeight="250"
+    d:DesignWidth="250"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    mc:Ignorable="d">
+
+    <Border
+        Grid.RowSpan="6"
+        Grid.ColumnSpan="4"
+        BorderBrush="CornflowerBlue"
+        BorderThickness="3">
+        <Grid
+            Width="225"
+            Height="250"
+            Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
             </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
 
-            
-                <Label Grid.Column="1" Grid.ColumnSpan="3" Width="93" >Add Marker</Label>
 
-                <Label Grid.Row="1" Content="Resident : " Grid.ColumnSpan="2" VerticalContentAlignment="Center" />
-            <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Width="150" Height="20" ItemsSource="{Binding ResidentList}" DisplayMemberPath="FullName" SelectedValuePath="ID"  SelectedItem="{Binding Resident}" ></ComboBox>
-            
-            <Label Content="X : " Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding X}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Width="75" Height="25" VerticalAlignment="Top"></TextBox>
-            <Label Content="Y : " Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center"/>
-            <TextBox Text="{Binding Y}" Grid.Row="4" Grid.Column="1" Width="75" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2"></TextBox>
-            <Button Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="Save" Click="OnSaveButtonClicked" Background="CornflowerBlue" Width="50" Height="25"></Button>
-            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Cancel" Click="OnCloseButtonClicked" Background="CornflowerBlue" Width="50" Height="25"></Button>
+            <Label
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Width="93">
+                Add Marker
+            </Label>
+
+            <Label
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                VerticalContentAlignment="Center"
+                Content="Resident : " />
+            <ComboBox
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="4"
+                Width="150"
+                Height="20"
+                DisplayMemberPath="FullName"
+                ItemsSource="{Binding ResidentList}"
+                SelectedItem="{Binding Resident}"
+                SelectedValuePath="ID" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                HorizontalAlignment="Center"
+                Content="X : " />
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Width="75"
+                Height="25"
+                VerticalAlignment="Top"
+                Text="{Binding X}" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                HorizontalAlignment="Center"
+                Content="Y : " />
+            <TextBox
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Width="75"
+                Height="25"
+                VerticalAlignment="Top"
+                Text="{Binding Y}" />
+            <Button
+                Grid.Row="5"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Width="50"
+                Height="25"
+                Background="CornflowerBlue"
+                Click="OnSaveButtonClicked"
+                Content="Save" />
+            <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Width="50"
+                Height="25"
+                Background="CornflowerBlue"
+                Click="OnCloseButtonClicked"
+                Content="Cancel" />
 
 
 

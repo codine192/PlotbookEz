@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:EzPlot.Controls.ToolbarControls"
              mc:Ignorable="d" 
              >
-    <Grid>
-        <Button Content="  Make Grid  " Click="Button_Click"></Button>
+    <Grid> 
+        <Button Content="  Make Grid  " Click="Button_Click"  ></Button>
     </Grid>
 </UserControl>

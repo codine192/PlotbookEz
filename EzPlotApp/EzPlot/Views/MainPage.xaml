@@ -1,85 +1,132 @@
 ﻿<Page
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:EzPlot.Views" 
-      xmlns:control="clr-namespace:EzPlot.Controls" 
-      xmlns:toolbar="clr-namespace:EzPlot.Controls.ToolbarControls"
-      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:controlzex="urn:controlzex" x:Class="EzPlot.Views.MainPage" 
-      x:Name="Self"
-      mc:Ignorable="d" 
-      
-      Title="MainPage">
+    x:Class="EzPlot.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:control="clr-namespace:EzPlot.Controls"
+    xmlns:controlzex="urn:controlzex"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EzPlot.Views"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolbar="clr-namespace:EzPlot.Controls.ToolbarControls"
+    x:Name="Self"
+    Title="MainPage"
+    mc:Ignorable="d">
     <Page.Resources>
         <Style TargetType="ScrollViewer">
-            <Setter           
-        Property="Template">
+            <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ScrollViewer">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <ScrollContentPresenter Grid.Column="0" Grid.Row="0" Content="{TemplateBinding Content}" 
-                                                    Margin="{TemplateBinding Padding}"/>
-                            <ScrollBar x:Name="PART_VerticalScrollBar" 
-                                       Grid.Column="1" Grid.Row="0" 
-                                       Orientation="Vertical" 
-                                       Maximum="{TemplateBinding ScrollableHeight}" 
-                                       ViewportSize="{TemplateBinding ViewportHeight}" 
-                                       Value="{TemplateBinding VerticalOffset}" 
-                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
-                                       Height="300"
-                                      />
-                            <ScrollBar x:Name="PART_HorizontalScrollBar" 
-                                       Grid.Column="0" Grid.Row="1" 
-                                       Orientation="Horizontal" 
-                                       Maximum="{TemplateBinding ScrollableWidth}" 
-                                       ViewportSize="{TemplateBinding ViewportWidth}" 
-                                       Value="{TemplateBinding HorizontalOffset}" 
-                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
-                                       Width="300"/>
+                            <ScrollContentPresenter
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="{TemplateBinding Padding}"
+                                Content="{TemplateBinding Content}" />
+                            <ScrollBar
+                                x:Name="PART_VerticalScrollBar"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Height="300"
+                                Maximum="{TemplateBinding ScrollableHeight}"
+                                Orientation="Vertical"
+                                ViewportSize="{TemplateBinding ViewportHeight}"
+                                Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                Value="{TemplateBinding VerticalOffset}" />
+                            <ScrollBar
+                                x:Name="PART_HorizontalScrollBar"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Width="300"
+                                Maximum="{TemplateBinding ScrollableWidth}"
+                                Orientation="Horizontal"
+                                ViewportSize="{TemplateBinding ViewportWidth}"
+                                Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                Value="{TemplateBinding HorizontalOffset}" />
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
-            </Setter> 
+            </Setter>
         </Style>
     </Page.Resources>
 
-    <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="1">
-        <Grid DataContext="{Binding ElementName=Self}" Height="Auto" Width="Auto" Background="#FF0C757D">
+    <Border
+        Margin="1"
+        BorderBrush="CornflowerBlue"
+        BorderThickness="1">
+        <Grid
+            Width="Auto"
+            Height="Auto"
+            Background="#FF0C757D"
+            DataContext="{Binding ElementName=Self}">
             <Viewbox >
-            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="Both" MaxWidth="850" MaxHeight="540" Margin="10">
-                <Grid >
-                <Canvas x:Name="OverlayCanvas"  MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Background="Azure"  MinHeight="550" MinWidth="850" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
-                    <Canvas.Effect>
-                        <DropShadowEffect BlurRadius="35"/>
-                    </Canvas.Effect>
-                    <Canvas.LayoutTransform>
-                        <ScaleTransform ScaleX="{Binding Value, ElementName=ZoomSlider}" 
-                                    ScaleY="{Binding Value, ElementName=ZoomSlider}"/>
-                    </Canvas.LayoutTransform>
-                    <Image x:Name="mapImage" Stretch="UniformToFill" MinHeight="550" MinWidth="850"/>
+                <ScrollViewer
+                    
+                    Margin="10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalScrollBarVisibility="Auto"
+                    PanningMode="Both"
+                    Padding="10"
+                    VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Canvas
+                            x:Name="OverlayCanvas"
+                            MinWidth="850"
+                            MinHeight="550"
+                            Margin="20"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            
+                            Background="Azure"
+                            MouseLeftButtonDown="Canvas_MouseLeftButtonDown">
+                            <Canvas.Effect>
+                                <DropShadowEffect BlurRadius="35" />
+                            </Canvas.Effect>
+                            <Canvas.LayoutTransform>
+                                <ScaleTransform ScaleX="{Binding Value, ElementName=ZoomSlider}" ScaleY="{Binding Value, ElementName=ZoomSlider}" />
+                            </Canvas.LayoutTransform>
+                            <Image
+                                x:Name="mapImage"
+                                MinWidth="850"
+                                MinHeight="550"
+                                Stretch="UniformToFill" />
 
-                </Canvas>
-                        
+                        </Canvas>
+               
                     </Grid>
-            </ScrollViewer>
+                    
+                </ScrollViewer>
             </Viewbox>
-            <Slider x:Name="ZoomSlider" Minimum=".9" Maximum="20" Value=".5" Orientation="Vertical" Height="150" Width="20" HorizontalAlignment="Left"  Background="{x:Null}" Foreground="#FF279ED0" Margin="3">
+            <Slider
+                x:Name="ZoomSlider"
+                Width="20"
+                Height="150"
+                Padding="2"
+                HorizontalAlignment="Left"
+                Background="{x:Null}"
+                Foreground="#FF279ED0"
+                Maximum="10"
+                Margin="3"
+                Minimum=".9"
+                Orientation="Vertical"
+                Value=".5">
+
                 <Slider.Effect>
-                    <BlurEffect/>
+                    <BlurEffect />
                 </Slider.Effect>
             </Slider>
             <control:MarkerToolBoxControl x:Name="markerToolBoxControl" VerticalAlignment="Top" />
-            <toolbar:CemeteryPlottingToolbarControl x:Name="PlottingToolBar" VerticalAlignment="Bottom"></toolbar:CemeteryPlottingToolbarControl>
-            
+            <toolbar:CemeteryPlottingToolbarControl x:Name="PlottingToolBar" VerticalAlignment="Bottom" />
+
         </Grid>
     </Border>
 

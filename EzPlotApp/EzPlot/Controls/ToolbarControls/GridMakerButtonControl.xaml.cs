@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,22 +20,31 @@ namespace EzPlot.Controls.ToolbarControls
     /// <summary>
     /// Interaction logic for GridMakerButtonControl.xaml
     /// </summary>
-    public partial class GridMakerButtonControl : UserControl
+    public partial class GridMakerButtonControl : UserControl 
     {
         public GridMakerControl GridMaker { get; set; }
-        public GridMakerPopupControl PopupControl { get; set; }
+        public GridMakerPopupControl Popup { get; set; }
+      
         public GridMakerButtonControl()
         {
             InitializeComponent();
-            
+         Popup = new GridMakerPopupControl();
+            Popup.GridMakerPopup.IsOpen = false;
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PopupControl = new GridMakerPopupControl();
-            PopupControl.GridMakerPopup.PlacementTarget = this;
-            PopupControl.GridMakerPopup.IsOpen = true;
-            
+           
+           if (Popup.GridMakerPopup.IsOpen == false)
+            {
+                Popup.GridMakerPopup.PlacementTarget = this;
+                Popup.GridMakerPopup.IsOpen = true;
+            }
+            else
+            {
+                Popup.GridMakerPopup.IsOpen = false;
+            }
         }
     }
 }
