@@ -25,6 +25,9 @@
     <Compile Update="Controls\ToolbarControls\GridMakerPopupControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\ToolbarControls\ToggleSwitchControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddPlotBookPageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\ToolbarControls\GridMakerPopupControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ToolbarControls\ToggleSwitchControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AddPlotBookPageView.xaml">

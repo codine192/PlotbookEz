@@ -1,16 +1,17 @@
 ﻿<UserControl
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:EzPlot.Controls.ToolbarControls"
-             xmlns:Controls="clr-namespace:EzPlot.Controls" x:Class="EzPlot.Controls.ToolbarControls.CemeteryPlottingToolbarControl"
-             mc:Ignorable="d" >
+    x:Class="EzPlot.Controls.ToolbarControls.CemeteryPlottingToolbarControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:EzPlot.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EzPlot.Controls.ToolbarControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
     <Grid>
-        <ToolBarTray >
+        <ToolBarTray>
             <ToolBar>
 
-                <local:GridMakerButtonControl></local:GridMakerButtonControl>
+                <local:GridMakerButtonControl />
 
             </ToolBar>
         </ToolBarTray>

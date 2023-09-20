@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Cody\Documents\GitHub\PlotbookEz\EzPlotApp\EzPlot\App.xaml
-18623124941
+191003445504
 
-451164510687
+46-900844134
 282-479761223
-Controls\MarkerControl.xaml;Controls\MarkerPopupControl.xaml;Controls\MarkerToolBoxControl.xaml;Controls\ToolbarControls\CemeteryPlottingToolbarControl.xaml;Controls\ToolbarControls\GridMakerButtonControl.xaml;Controls\ToolbarControls\GridMakerControl.xaml;Controls\ToolbarControls\GridMakerPopupControl.xaml;MainWindow.xaml;old\AddResidentWindow.xaml;old\LoadPlotBookWindow.xaml;old\PlotBookDetailsWindow.xaml;Views\AddPlotBookPageView.xaml;Views\AddResidentPageView.xaml;Views\MainPage.xaml;Views\MarkerToolBoxView.xaml;Views\ViewPlotListPageView.xaml;Views\ViewResidentListPageView.xaml;Views\ViewResidentPageView.xaml;
+Controls\MarkerControl.xaml;Controls\MarkerPopupControl.xaml;Controls\MarkerToolBoxControl.xaml;Controls\ToolbarControls\CemeteryPlottingToolbarControl.xaml;Controls\ToolbarControls\GridMakerButtonControl.xaml;Controls\ToolbarControls\GridMakerControl.xaml;Controls\ToolbarControls\GridMakerPopupControl.xaml;Controls\ToolbarControls\ToggleSwitchControl.xaml;MainWindow.xaml;old\AddResidentWindow.xaml;old\LoadPlotBookWindow.xaml;old\PlotBookDetailsWindow.xaml;Views\AddPlotBookPageView.xaml;Views\AddResidentPageView.xaml;Views\MainPage.xaml;Views\MarkerToolBoxView.xaml;Views\ViewPlotListPageView.xaml;Views\ViewResidentListPageView.xaml;Views\ViewResidentPageView.xaml;
 
 True
 

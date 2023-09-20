@@ -19,6 +19,7 @@ using System.IO;
 using System.Collections.ObjectModel;
 using EzPlot.Controls;
 using System.ComponentModel;
+using EzPlot.Controls.ToolbarControls;
 
 namespace EzPlot.Views
 {
@@ -31,6 +32,7 @@ namespace EzPlot.Views
         private bool isRemovingMarker = false;
         private bool isAddingMarker = false;
         private bool awaitingClick = false;
+        private bool isEditingModeChecked = false;
         public event EventHandler LeftButton_Pressed;
         public event EventHandler<MarkerEventArgs> MarkerAdded;
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -70,6 +72,9 @@ namespace EzPlot.Views
             markerToolBoxControl.PlaceMarkerModeActivated += ToolBox_PlacingMarkerModeActivated;
             markerToolBoxControl.RemoveMarkerModeActivated += ToolBox_RemoveMarkerModeDeactivated;
             MarkerAdded += OpenMarkerPopup;
+            PlottingToolBar.Visibility = Visibility.Hidden;
+            toggleSwitch.SwitchToggled += ToggleSwitch_Checked;
+            
         
            
 
@@ -83,6 +88,23 @@ namespace EzPlot.Views
             
         }
         
+        private void ToggleSwitch_Checked(object sender, EventArgs e)
+        {
+            if (isEditingModeChecked)
+            {
+                
+               
+                isEditingModeChecked = false;
+                OverlayCanvas.Cursor = Cursors.Arrow;
+                PlottingToolBar.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                isEditingModeChecked = true;
+                OverlayCanvas.Cursor = Cursors.Cross;
+                PlottingToolBar.Visibility= Visibility.Visible;
+            }
+        }
         private void ToolBox_PlacingMarkerModeActivated(object sender, EventArgs e)
         {
             isPlacingMarker = true;
