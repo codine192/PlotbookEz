@@ -56,7 +56,7 @@ namespace EzPlot.Views
         public event PropertyChangedEventHandler? PropertyChanged;
         public EventHandler CloseRequested;
 
-        public Resident Resident { get; set; }
+        public Resident CurrentResident { get; set; }
         public DateTime CurrentDay { get; set; }
 
         public BitmapImage HeadStone
@@ -301,26 +301,26 @@ namespace EzPlot.Views
         public void OnSave_ButtonClick(object sender, RoutedEventArgs e)
         {
             using var context = new MYDBContext();
-            Resident.FirstName = FirstName;
-            Resident.LastName = LastName;
-            Resident.DeathDate = DOD;
-            Resident.BirthDate = DOB;
-            Resident.DateAdded = DateTime.Now;
-            Resident.Contact.FirstName = ContactFirstName;
-            Resident.Contact.LastName = ContactLastName;
-            Resident.Contact.Phone = ContactPhone;
-            Resident.Contact.City = ContactCity;
-            Resident.Contact.Address = ContactAddress;
-            Resident.Contact.State = ContactState;
-            Resident.Contact.ZipCode = ContactZip;
-            Resident.Contact.Email = ContactEmail;
+            CurrentResident.FirstName = FirstName;
+            CurrentResident.LastName = LastName;
+            CurrentResident.DeathDate = DOD;
+            CurrentResident.BirthDate = DOB;
+            CurrentResident.DateAdded = DateTime.Now;
+            CurrentResident.Contact.FirstName = ContactFirstName;
+            CurrentResident.Contact.LastName = ContactLastName;
+            CurrentResident.Contact.Phone = ContactPhone;
+            CurrentResident.Contact.City = ContactCity;
+            CurrentResident.Contact.Address = ContactAddress;
+            CurrentResident.Contact.State = ContactState;
+            CurrentResident.Contact.ZipCode = ContactZip;
+            CurrentResident.Contact.Email = ContactEmail;
 
-            if (imageData != null) { Resident.HeadStoneImageData = imageData; }
-            context.Residents.Add(Resident);
+            if (imageData != null) { CurrentResident.HeadStoneImageData = imageData; }
+            context.Residents.Add(CurrentResident);
             int isSaved = context.SaveChanges();
             if (isSaved > 0)
             {
-                MessageBox.Show($"{Resident.FullName} Added!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"{CurrentResident.FullName} Added!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
             }
             else
